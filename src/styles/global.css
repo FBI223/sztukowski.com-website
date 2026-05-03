@@ -698,48 +698,22 @@ footer a:hover {
   border-color: var(--accent3);
 }
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
-@media (max-width: 640px) {
-  .topbar      { padding: 0 1rem; min-height: 56px; }
-  .topbar-nav a { padding: 16px 9px; font-size: 13px; }
-  .ctrl-btn    { font-size: 10px; padding: 6px 10px; }
-  .wrapper     { padding: 2rem 1rem 4rem; }
-  .page-header h1 { font-size: 36px; }
-  .skill-grid  { grid-template-columns: 1fr 1fr; }
-  .hobby-grid  { grid-template-columns: 1fr 1fr; }
-  footer {
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    font-size: 13px;
-  }
-}
+
 
 
 /* ═══════════════════════════════════════════
    MOBILE NAV FIX
 ═══════════════════════════════════════════ */
-
-.menu-btn {
-  display: none;
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: var(--text);
-  cursor: pointer;
-}
-
-/* MOBILE */
 @media (max-width: 768px) {
+
+  .topbar {
+    padding: 0 1rem;
+    min-height: 56px;
+    position: relative;
+  }
 
   .menu-btn {
     display: block;
-  }
-
-  .topbar {
-    position: relative;
   }
 
   .topbar-nav {
@@ -761,10 +735,40 @@ footer a:hover {
 
   .topbar-nav a {
     padding: 14px 20px;
+    font-size: 13px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
-  .topbar-controls {
-    margin-left: auto;
+  .ctrl-btn {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .wrapper {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page-header h1 {
+    font-size: 32px;
+  }
+
+  .skill-grid,
+  .hobby-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-size: 13px;
   }
 }
+
+
+.topbar-nav {
+  transition: all 0.2s ease;
+}
+
+
+

@@ -88,16 +88,17 @@ const pageTitle = title === 'Home' ? 'Marcin Sztukowski' : `${title} · Marcin S
     const menuBtn = document.getElementById('menu-btn');
     const navEl = document.getElementById('nav');
 
-    menuBtn.addEventListener('click', () => {
-      navEl.classList.toggle('open');
-    });
-
-    document.querySelectorAll('#nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        navEl.classList.remove('open');
+    if (menuBtn && navEl) {
+      menuBtn.addEventListener('click', () => {
+        navEl.classList.toggle('open');
       });
-    });
 
+      document.querySelectorAll('#nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          navEl.classList.remove('open');
+        });
+      });
+    }
 
     const html     = document.documentElement;
     const themeBtn = document.getElementById('theme-btn');
