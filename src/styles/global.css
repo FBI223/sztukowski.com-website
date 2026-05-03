@@ -716,3 +716,55 @@ footer a:hover {
     font-size: 13px;
   }
 }
+
+
+/* ═══════════════════════════════════════════
+   MOBILE NAV FIX
+═══════════════════════════════════════════ */
+
+.menu-btn {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .topbar {
+    position: relative;
+  }
+
+  .topbar-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    z-index: 200;
+  }
+
+  .topbar-nav.open {
+    display: flex;
+  }
+
+  .topbar-nav a {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .topbar-controls {
+    margin-left: auto;
+  }
+}
