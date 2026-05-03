@@ -699,21 +699,50 @@ footer a:hover {
 }
 
 
+/* ===== HAMBURGER BASE ===== */
+.menu-btn {
+  display: none;
 
+  width: 44px;
+  height: 44px;
 
-/* ═══════════════════════════════════════════
-   MOBILE NAV FIX
-═══════════════════════════════════════════ */
+  border-radius: 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 700;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.menu-btn:hover {
+  background: var(--bg4);
+  border-color: var(--accent);
+}
+
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+
+  .menu-btn {
+    display: flex;
+  }
 
   .topbar {
     padding: 0 1rem;
     min-height: 56px;
     position: relative;
-  }
-
-  .menu-btn {
-    display: block;
   }
 
   .topbar-nav {
@@ -735,40 +764,11 @@ footer a:hover {
 
   .topbar-nav a {
     padding: 14px 20px;
-    font-size: 13px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
-  .ctrl-btn {
-    font-size: 10px;
-    padding: 6px 10px;
-  }
-
-  .wrapper {
-    padding: 2rem 1rem 4rem;
-  }
-
-  .page-header h1 {
-    font-size: 32px;
-  }
-
-  .skill-grid,
-  .hobby-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    font-size: 13px;
+  .topbar-controls {
+    margin-left: auto;
   }
 }
-
-
-.topbar-nav {
-  transition: all 0.2s ease;
-}
-
-
 
