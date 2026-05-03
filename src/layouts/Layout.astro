@@ -13,15 +13,17 @@ const {
   current,
 } = Astro.props;
 
+const BASE = '/sztukowski.com-website';
+
 const nav = [
-  { href: '/',         en: 'Home',     pl: 'Start'    },
-  { href: '/about',    en: 'About',    pl: 'O mnie'   },
-  { href: '/experience', en: 'Experience', pl: 'Doświadczenie' }, // <-- DODAJ TO
-  { href: '/skills',   en: 'Skills',   pl: 'Umiej.'   },
-  { href: '/projects', en: 'Projects', pl: 'Projekty' },
-  { href: '/courses',  en: 'Courses',  pl: 'Kursy'    },
-  { href: '/hobby',    en: 'Hobby',    pl: 'Hobby'    },
-  { href: '/cv',       en: 'CV',       pl: 'CV'       },
+  { href: `${BASE}/`, en: 'Home', pl: 'Start' },
+  { href: `${BASE}/about/`, en: 'About', pl: 'O mnie' },
+  { href: `${BASE}/experience/`, en: 'Experience', pl: 'Doświadczenie' },
+  { href: `${BASE}/skills/`, en: 'Skills', pl: 'Umiej.' },
+  { href: `${BASE}/projects/`, en: 'Projects', pl: 'Projekty' },
+  { href: `${BASE}/courses/`, en: 'Courses', pl: 'Kursy' },
+  { href: `${BASE}/hobby/`, en: 'Hobby', pl: 'Hobby' },
+  { href: `${BASE}/cv/`, en: 'CV', pl: 'CV' },
 ];
 
 const pageTitle = title === 'Home' ? 'Marcin Sztukowski' : `${title} · Marcin Sztukowski`;
