@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const BASE = '/sztukowski.com-website';
 ---
 
-<Layout title="Home" current="/">
+<Layout title="Home" current={`${BASE}/`}>
   <style>
     .hero {
       padding: 2.5rem 0 3rem;
