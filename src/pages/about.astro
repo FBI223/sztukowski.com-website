@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About" current="/about">
+
+<div class="page-header">
+  <div class="eyebrow">// about me</div>
+  <h1>Background</h1>
+  <p>Professional profile, education and work experience.</p>
+</div>
+
+<div class="stat-row">
+  <div class="stat"><div class="val">MSc</div><div class="lbl">CS · Jagiellonian University Kraków</div></div>
+  <div class="stat"><div class="val">4+</div><div class="lbl">Years in IT &amp; networking</div></div>
+  <div class="stat"><div class="val">3</div><div class="lbl">Research projects at GMUM</div></div>
+  <div class="stat"><div class="val">C1</div><div class="lbl">English proficiency</div></div>
+</div>
+
+<div class="sec-label">Profile</div>
+
+<div class="bio-card">
+  I am a <strong>Computer Science MSc student at the Jagiellonian University in Kraków</strong>,
+  where I previously completed my BSc. My academic path is deliberately interdisciplinary —
+  an earlier BSc in Economics at the University of Warsaw gave me a foundation in quantitative
+  reasoning before I committed fully to CS.
+</div>
+<div class="bio-card">
+  My core research focus is <strong>applied machine learning in medicine and biology</strong> —
+  problems that require bridging multiple domains simultaneously. Building a working ECG classifier
+  means understanding both signal processing and deep learning; predicting ADMET drug profiles
+  requires knowledge of chemistry, biology, and multi-task learning architecture.
+</div>
+<div class="hbox">
+  <strong>Current focus:</strong> ADMET property prediction using multi-task learning (MTL) as part
+  of the ML in Drug Design course at GMUM / Jagiellonian University. Exploring how shared
+  representations across pharmacokinetic endpoints improve data efficiency and generalization.
+</div>
+<div class="bio-card">
+  Before and alongside my CS studies I have worked in <strong>IT support and network
+  engineering</strong> in the United States — VoIP systems, VLAN segmentation, server administration
+  and complete network overhauls for a financial firm in Connecticut.
+</div>
+<div class="bio-card">
+  I write primarily in <strong>Python, C++, and Java</strong>, with significant work in Swift
+  (iOS / CoreML) and C# (Godot, .NET). I approach software with an emphasis on correctness and
+  clean architecture.
+</div>
+
+<div class="sec-label">Education</div>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="date">Jul 2025 – present</div>
+    <h4>MSc Computer Science</h4>
+    <div class="org">Jagiellonian University, Kraków</div>
+    <p>Machine learning · bioinformatics · deep learning · quantum cryptography · networks · drug design ML</p>
+  </div>
+  <div class="tl-item">
+    <div class="date">Oct 2021 – Jul 2025</div>
+    <h4>BSc Computer Science</h4>
+    <div class="org">Jagiellonian University, Kraków</div>
+    <p>Algorithms · numerical methods · software engineering · functional programming · networks · databases</p>
+  </div>
+  <div class="tl-item">
+    <div class="date">Oct 2019 – Sep 2021</div>
+    <h4>BSc Economics (incomplete)</h4>
+    <div class="org">University of Warsaw, Warsaw</div>
+    <p>Transferred to pursue CS full-time.</p>
+  </div>
+  <div class="tl-item">
+    <div class="date">Sep 2016 – May 2019</div>
+    <h4>High School — Matura</h4>
+    <div class="org">VILO, Białystok</div>
+  </div>
+</div>
+
+<div class="sec-label">Work Experience</div>
+
+<div class="work-card">
+  <div class="work-header">
+    <div class="work-title">IT Support / Lead Server Administrator</div>
+    <div class="work-date">Jan 2022 – present</div>
+  </div>
+  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA (remote)</div>
+  <div class="work-body"><ul>
+    <li>Remote support for computing systems, VoIP, printers, email and data server</li>
+    <li>Hardware/software upgrades and system optimizations</li>
+  </ul></div>
+</div>
+
+<div class="work-card">
+  <div class="work-header">
+    <div class="work-title">Network Engineer</div>
+    <div class="work-date">Dec 2024 – Jan 2025</div>
+  </div>
+  <div class="work-org">New Britain, CT, USA</div>
+  <div class="work-body"><ul>
+    <li>Complete overhaul of building IT and network infrastructure</li>
+    <li>Routers, switches, patch panels, IP cameras, new cabling</li>
+    <li>VoIP server, VLAN segmentation, traffic routing, public IPs per office</li>
+  </ul></div>
+</div>
+
+<div class="work-card">
+  <div class="work-header">
+    <div class="work-title">Mathematics Tutor</div>
+    <div class="work-date">Jan 2022 – present</div>
+  </div>
+  <div class="work-org">Private</div>
+  <div class="work-body">High school mathematics — core concepts and Matura exam preparation.</div>
+</div>
+
+<div class="work-card">
+  <div class="work-header">
+    <div class="work-title">Tax Office Assistant</div>
+    <div class="work-date">Jun 2022 – Jan 2023</div>
+  </div>
+  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA</div>
+  <div class="work-body">Income tax returns, IRS and insurance audits, invoice issuance, IT support.</div>
+</div>
+
+<div class="work-card">
+  <div class="work-header">
+    <div class="work-title">Seasonal Tax Office Assistant</div>
+    <div class="work-date">Jul 2016 – Sep 2020</div>
+  </div>
+  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA</div>
+  <div class="work-body">Tax filing, document proofreading, sales and property tax, IT support.</div>
+</div>
+
+</Layout>

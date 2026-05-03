@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Projects" current="/projects">
+
+<div class="page-header">
+  <div class="eyebrow">// work & research</div>
+  <h1>Projects</h1>
+  <p>Research collaborations, end-to-end ML systems, bioinformatics tools and experiments.</p>
+</div>
+
+<!-- Research -->
+<div class="proj-section-header">
+  <span class="lbl">Research</span>
+  <span class="sub">GMUM × Wawel Museum · Oct 2025 – Feb 2026</span>
+  <div class="line"></div>
+</div>
+
+<div class="project-card">
+  <div class="ph">
+    <h3>2D → 3D Reconstruction — VistaDream + Depth Anything</h3>
+    <span class="proj-tag" data-type="research">research</span>
+  </div>
+  <p>Integrated Depth Anything v2 into the VistaDream pipeline via a custom adapter. Modified depth normalization and camera logic for stable 3D projection from single 2D painting images. Generated 3D Gaussian Splatting (.ply) point clouds enabling interactive 3D exploration of museum artworks.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">Depth Anything v2</span>
+    <span class="badge">VistaDream</span>
+    <span class="badge">3D Gaussian Splatting</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph">
+    <h3>ML Digital Painting Restoration — Diffusion + LoRA + FLUX</h3>
+    <span class="proj-tag" data-type="research">research</span>
+  </div>
+  <p>Diffusion-based inpainting pipeline (FLUX.2-dev) for restoration of damaged historical artworks. Trained LoRA adapters for painter-specific style reconstruction. Improved stability via mask refinement and controlled inference tuning.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">Diffusion models</span>
+    <span class="badge">LoRA</span>
+    <span class="badge">FLUX.1-dev</span>
+    <span class="badge">inpainting</span>
+  </div>
+</div>
+
+<!-- Drug Design -->
+<div class="proj-section-header">
+  <span class="lbl">Drug Design ML</span>
+  <div class="line"></div>
+</div>
+
+<div class="project-card">
+  <div class="ph">
+    <h3>ADMET Multi-Task Learning</h3>
+    <span class="proj-tag" data-type="active">active</span>
+  </div>
+  <p>Predicting full ADMET drug profiles (Absorption, Distribution, Metabolism, Excretion, Toxicity) using a multi-task learning architecture. Shared representations across pharmacokinetic endpoints improve data efficiency and generalization. Part of ML in Drug Design course at GMUM 2026.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">PyTorch</span>
+    <span class="badge">MTL</span>
+    <span class="badge">GMUM</span>
+  </div>
+</div>
+
+<!-- ECG -->
+<div class="proj-section-header">
+  <span class="lbl">ECG & Medical Systems</span>
+  <div class="line"></div>
+</div>
+
+<div class="project-card">
+  <div class="ph">
+    <h3>ECGApp — Full-Stack ECG Monitoring & ML Classification</h3>
+    <span class="proj-tag" data-type="flagship">flagship</span>
+  </div>
+  <p>End-to-end ECG system spanning hardware, mobile and ML. Arduino acquisition → BLE → iOS app (SwiftUI + CoreBluetooth) → three independent PyTorch models for rhythm classification, beat-type classification and waveform segmentation. Deployed on-device via CoreML. Signal storage in .json and WFDB-compatible formats.</p>
+  <div class="badge-row">
+    <span class="badge">Swift</span>
+    <span class="badge">SwiftUI</span>
+    <span class="badge">CoreBluetooth</span>
+    <span class="badge">CoreML</span>
+    <span class="badge">PyTorch</span>
+    <span class="badge">Arduino</span>
+    <span class="badge">BLE</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>ECG Arrhythmia Classifier</h3></div>
+  <p>Deep learning model for arrhythmia detection from raw ECG signals. Preprocessing: resampling, wavelet denoising, normalization.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">PyTorch</span>
+    <span class="badge">signal processing</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>ECG QRS / P / T Wave Recognition</h3></div>
+  <p>Waveform segmentation model identifying QRS complexes, P waves and T waves in ECG recordings.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">ML</span>
+    <span class="badge">ECG segmentation</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>ECG Signal Generator</h3></div>
+  <p>Synthetic 10-second ECG signal generator for testing and training data augmentation.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">signal synthesis</span>
+  </div>
+</div>
+
+<!-- Bioinformatics -->
+<div class="proj-section-header">
+  <span class="lbl">Bioinformatics</span>
+  <div class="line"></div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>DNA Processing Pipeline</h3></div>
+  <p>Pipeline for DNA preprocessing and variant calling on genomic data in VCF/BAM format using GATK and samtools.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">GATK</span>
+    <span class="badge">samtools</span>
+    <span class="badge">VCF/BAM</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>GeneticViewer</h3></div>
+  <p>Desktop application for visualizing and exploring genetic data files.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">bioinformatics</span>
+  </div>
+</div>
+
+<!-- Games & Apps -->
+<div class="proj-section-header">
+  <span class="lbl">Games & Applications</span>
+  <div class="line"></div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>FoxyGodot — 2D Platformer Game</h3></div>
+  <p>2D platformer in Godot (C#) designed as an exercise in classical OOP design patterns. Implements Strategy, State, Factory, Observer / Event Bus, Singleton and Template Method. Centralized SignalManager event system for all game state transitions.</p>
+  <div class="badge-row">
+    <span class="badge">C#</span>
+    <span class="badge">Godot</span>
+    <span class="badge">OOP</span>
+    <span class="badge">design patterns</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>LLM Multi-Agent Experiment</h3></div>
+  <p>Multi-agent experiment using llama-dolphin models exploring agent communication, role-playing and adversarial prompting dynamics.</p>
+  <div class="badge-row">
+    <span class="badge">Python</span>
+    <span class="badge">LLM</span>
+    <span class="badge">multi-agent</span>
+    <span class="badge">llama</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3>FlashMind — Flashcard App</h3></div>
+  <p>Flashcard learning application.</p>
+  <div class="badge-row">
+    <span class="badge">app</span>
+  </div>
+</div>
+
+<p style="margin-top:1.5rem;font-family:var(--mono);font-size:11px;color:var(--dim);">
+  // more on <a href="https://github.com/FBI223" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">github.com/FBI223</a>
+</p>
+
+</Layout>
