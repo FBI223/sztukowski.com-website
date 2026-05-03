@@ -1,9 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const BASE = '';
 ---
 
-<Layout title="CV" current={`${BASE}/cv/`}>
+<Layout title="CV" current={`/cv/`}>
 <style>
   .cv-actions {
     display: flex;
@@ -33,7 +32,7 @@ const BASE = '';
 
   <div class="cv-actions">
     <a
-        href={`${BASE}/cv.pdf`}
+        href={`$/cv.pdf`}
         download
         class="btn btn-primary"
         data-en="Download PDF ↓"
@@ -42,7 +41,7 @@ const BASE = '';
     </a>
 
     <a
-        href={`${BASE}/cv.pdf`}
+        href={`/cv.pdf`}
         target="_blank"
         rel="noopener"
         class="btn btn-secondary"
@@ -52,6 +51,6 @@ const BASE = '';
     </a>
   </div>
 
-<embed src={`${BASE}/cv.pdf`}type="application/pdf" class="pdf-frame" />
+<embed src={`/cv.pdf`}type="application/pdf" class="pdf-frame" />
 
 </Layout>
