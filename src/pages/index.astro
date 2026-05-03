@@ -3,161 +3,128 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home" current="/">
-<style>
-  /* ── HERO ── */
-  .hero {
-    padding: 2.5rem 0 3rem;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 3rem;
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent2);
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  .hero h1 {
-    font-family: var(--mono);
-    font-size: 48px;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: -1.5px;
-    line-height: 1.1;
-    margin-bottom: 1.25rem;
-  }
-  .hero h1 span { color: var(--accent); }
-  .hero-desc {
-    font-size: 15.5px;
-    color: var(--muted);
-    max-width: 580px;
-    line-height: 1.85;
-    margin-bottom: 1.75rem;
-  }
-  .hero-desc strong { color: var(--text); font-weight: 500; }
+  <style>
+    .hero {
+      padding: 2.5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .hero-eyebrow {
+      font-family: var(--mono); font-size: 11px; color: var(--accent2);
+      letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: var(--mono); font-size: 48px; font-weight: 600;
+      color: var(--text); letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-desc {
+      font-size: 15.5px; color: var(--muted); max-width: 650px;
+      line-height: 1.85; margin-bottom: 1.75rem;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 2rem; }
+    .tag {
+      font-family: var(--mono); font-size: 11px; color: var(--accent);
+      background: rgba(34,217,122,0.07); border: 1px solid rgba(34,217,122,0.18);
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .grid-label {
+      font-family: var(--mono); font-size: 10px; color: var(--accent2);
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .nav-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 12px;
+    }
+    .nav-card {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r2);
+      padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column;
+      gap: 5px; transition: background 0.15s, border-color 0.15s;
+    }
+    .nav-card:hover { background: var(--bg3); border-color: var(--border2); }
+    .nc-icon  { font-size: 22px; margin-bottom: 4px; }
+    .nc-title { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); }
+    .nc-desc  { font-size: 12px; color: var(--muted); line-height: 1.55; }
+    .nc-arrow { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-top: auto; padding-top: 10px; }
+    @media (max-width: 640px) { .hero h1 { font-size: 32px; } }
+  </style>
 
-  .tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 2rem;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    background: rgba(34,217,122,0.07);
-    border: 1px solid rgba(34,217,122,0.18);
-    padding: 4px 12px;
-    border-radius: 20px;
-  }
-  .hero-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
 
-  /* ── NAV CARDS ── */
-  .grid-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent2);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-    gap: 12px;
-  }
-  .nav-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--r2);
-    padding: 1.5rem;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .nav-card:hover {
-    background: var(--bg3);
-    border-color: var(--border2);
-  }
-  .nc-icon  { font-size: 22px; margin-bottom: 4px; }
-  .nc-title { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); }
-  .nc-desc  { font-size: 12px; color: var(--muted); line-height: 1.55; }
-  .nc-arrow { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-top: auto; padding-top: 10px; }
+  <div class="hero">
+    <div class="hero-eyebrow">// software engineer & researcher</div>
+    <h1>Marcin<br><span>Sztukowski</span></h1>
+    <p class="hero-desc">
+      <span data-en="MSc Computer Science student at" data-pl="Student studiów magisterskich informatyki na">MSc Computer Science student at</span>
+      <strong data-en="Jagiellonian University" data-pl="Uniwersytecie Jagiellońskim">Jagiellonian University</strong>.
+      <span data-en="I specialize in bridging the gap between" data-pl="Specjalizuję się w łączeniu">I specialize in bridging the gap between</span>
+      <strong data-en="Deep Learning research" data-pl="badań nad Deep Learningiem">Deep Learning research</strong>
+      <span data-en="and" data-pl="z">and</span>
+      <strong data-en="high-performance systems engineering" data-pl="wysokowydajną inżynierią systemową">high-performance systems engineering</strong>.
+      <span data-en="Experienced in developing end-to-end solutions—from molecular data analysis and generative modeling (Flow Matching, Diffusion) to low-level optimization in C++ and Swift." data-pl="Doświadczony w tworzeniu kompleksowych rozwiązań — od analizy danych molekularnych i modeli generatywnych (FLow Matching, Diffusion), po niskopoziomową optymalizację w C++ i Swift.">Experienced in developing end-to-end solutions—from molecular data analysis and generative modeling (GANs, Diffusion) to low-level optimization in C++ and Swift.</span>
+    </p>
 
-  @media (max-width: 640px) {
-    .hero h1 { font-size: 32px; }
-  }
-</style>
+    <div class="tag-row">
+      <span class="tag">Deep Learning / Generative AI</span>
+      <span class="tag">Graph Machine Learning</span>
+      <span class="tag" data-en="Bioinformatics & Drug Discovery" data-pl="Bioinformatyka i Projektowanie Leków">Bioinformatics & Drug Discovery</span>
+      <span class="tag" data-en="Low-Level Systems" data-pl="Systemy Niskopoziomowe">Low-Level Systems</span>
+      <span class="tag">C++ / SIMD</span>
+      <span class="tag">iOS / Swift</span>
+      <span class="tag" data-en="Advanced Algorithms" data-pl="Zaawansowane Algorytmy">Advanced Algorithms</span>
+    </div>
 
-<div class="hero">
-  <div class="hero-eyebrow">// marcin.sztukowski.com</div>
-  <h1>Marcin<br><span>Sztukowski</span></h1>
-  <p class="hero-desc">
-    MSc Computer Science student at the <strong>Jagiellonian University</strong> in Kraków.
-    I build <strong>ML systems at the intersection of medicine, biology, and hardware</strong> —
-    from microcontroller firmware and BLE, through deep learning, to on-device iOS deployment.
-  </p>
-  <div class="tag-row">
-    <span class="tag">Machine Learning</span>
-    <span class="tag">Bioinformatics</span>
-    <span class="tag">Drug Design ML</span>
-    <span class="tag">Embedded Systems</span>
-    <span class="tag">iOS / Swift</span>
-    <span class="tag">Computer Networks</span>
-    <span class="tag">3D Reconstruction</span>
+    <div class="hero-actions">
+      <a href="/experience" class="btn btn-primary"   data-en="Work & Research →" data-pl="Praca i Badania →">Work & Research →</a>
+      <a href="/projects"   class="btn btn-secondary" data-en="Key Projects"     data-pl="Kluczowe Projekty">Key Projects</a>
+      <a href="/cv"         class="btn btn-secondary" data-en="CV PDF"           data-pl="CV PDF">CV PDF</a>
+    </div>
   </div>
-  <div class="hero-actions">
-    <a href="/about"    class="btn btn-primary">About me →</a>
-    <a href="/projects" class="btn btn-secondary">Projects</a>
-    <a href="/cv"       class="btn btn-secondary">CV PDF</a>
-  </div>
-</div>
 
-<div class="grid-label">Explore</div>
-<div class="nav-grid">
-  <a href="/about" class="nav-card">
-    <div class="nc-icon">👤</div>
-    <div class="nc-title">About</div>
-    <div class="nc-desc">Background, education, work experience and what drives me professionally.</div>
-    <div class="nc-arrow">View →</div>
-  </a>
-  <a href="/skills" class="nav-card">
-    <div class="nc-icon">⚙️</div>
-    <div class="nc-title">Skills</div>
-    <div class="nc-desc">Full technical stack — languages, ML, embedded, networks, cryptography.</div>
-    <div class="nc-arrow">View →</div>
-  </a>
-  <a href="/projects" class="nav-card">
-    <div class="nc-icon">🔬</div>
-    <div class="nc-title">Projects</div>
-    <div class="nc-desc">Research at GMUM, ECG system, ADMET drug prediction, DNA pipelines and more.</div>
-    <div class="nc-arrow">View →</div>
-  </a>
-  <a href="/courses" class="nav-card">
-    <div class="nc-icon">📚</div>
-    <div class="nc-title">Courses</div>
-    <div class="nc-desc">Full curriculum from BSc and MSc CS at Jagiellonian University.</div>
-    <div class="nc-arrow">View →</div>
-  </a>
-  <a href="/hobby" class="nav-card">
-    <div class="nc-icon">🔭</div>
-    <div class="nc-title">Hobby</div>
-    <div class="nc-desc">Astronomy, electronics, hiking, mathematics, game dev and more.</div>
-    <div class="nc-arrow">View →</div>
-  </a>
-  <a href="/cv" class="nav-card">
-    <div class="nc-icon">📄</div>
-    <div class="nc-title">CV</div>
-    <div class="nc-desc">View or download full curriculum vitae as PDF.</div>
-    <div class="nc-arrow">Open →</div>
-  </a>
-</div>
+
+
+  <div class="grid-label" data-en="Directory" data-pl="Katalog">Directory</div>
+  <div class="nav-grid">
+    <a href="/about" class="nav-card">
+      <div class="nc-icon">👤</div>
+      <div class="nc-title" data-en="About"    data-pl="O mnie">About</div>
+      <div class="nc-desc"  data-en="Personal philosophy, academic path, and professional motivations." data-pl="Filozofia pracy, ścieżka akademicka i motywacje zawodowe.">Personal philosophy, academic path, and professional motivations.</div>
+      <div class="nc-arrow" data-en="Read more →"   data-pl="Czytaj więcej →">Read more →</div>
+    </a>
+
+    <a href="/experience" class="nav-card">
+      <div class="nc-icon">💼</div>
+      <div class="nc-title" data-en="Experience"   data-pl="Doświadczenie">Experience</div>
+      <div class="nc-desc"  data-en="Research at GMUM, software roles, and professional trajectory." data-pl="Badania w GMUM, role programistyczne i ścieżka zawodowa.">Research at GMUM, software roles, and professional trajectory.</div>
+      <div class="nc-arrow" data-en="View career →"   data-pl="Zobacz karierę →">View career →</div>
+    </a>
+
+    <a href="/skills" class="nav-card">
+      <div class="nc-icon">⚙️</div>
+      <div class="nc-title" data-en="Skills"   data-pl="Umiejętności">Skills</div>
+      <div class="nc-desc"  data-en="Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography." data-pl="Stack techniczny: Modele Generatywne, Graph ML, optymalizacja systemowa i kryptografia.">Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography.</div>
+      <div class="nc-arrow" data-en="Full stack →"   data-pl="Pełny stack →">Full stack →</div>
+    </a>
+
+    <a href="/projects" class="nav-card">
+      <div class="nc-icon">🔬</div>
+      <div class="nc-title" data-en="Projects" data-pl="Projekty">Projects</div>
+      <div class="nc-desc"  data-en="ADMET drug prediction, ECG systems, and high-performance DNA pipelines." data-pl="Predykcja ADMET, systemy EKG i wydajne pipeline'y DNA.">ADMET drug prediction, ECG systems, and high-performance DNA pipelines.</div>
+      <div class="nc-arrow" data-en="See works →"   data-pl="Zobacz prace →">See works →</div>
+    </a>
+
+    <a href="/courses" class="nav-card">
+      <div class="nc-icon">📚</div>
+      <div class="nc-title" data-en="Courses"  data-pl="Kursy">Courses</div>
+      <div class="nc-desc"  data-en="Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math." data-pl="Program studiów: Teoria informatyki, systemy złożone i matematyka wyższa.">Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math.</div>
+      <div class="nc-arrow" data-en="Explore →"   data-pl="Eksploruj →">Explore →</div>
+    </a>
+
+    <a href="/cv" class="nav-card">
+      <div class="nc-icon">📄</div>
+      <div class="nc-title" data-en="CV"       data-pl="CV">CV</div>
+      <div class="nc-desc"  data-en="Download the latest version of my professional resume (PDF)." data-pl="Pobierz aktualną wersję mojego życiorysu zawodowego (PDF).">Download the latest version of my professional resume (PDF).</div>
+      <div class="nc-arrow" data-en="Download →"   data-pl="Pobierz →">Download →</div>
+    </a>
+  </div>
 </Layout>

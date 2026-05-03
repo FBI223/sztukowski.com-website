@@ -4,136 +4,507 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Skills" current="/skills">
 
-<div class="page-header">
-  <div class="eyebrow">// technical profile</div>
-  <h1>Skills</h1>
-  <p>Languages, frameworks, domains and tools I work with regularly.</p>
-</div>
+  <div class="page-header">
+    <div class="eyebrow" data-en="// technical profile" data-pl="// profil techniczny">// technical profile</div>
+    <h1 data-en="Skills" data-pl="Umiejętności">Skills</h1>
+    <p data-en="Languages, frameworks, domains and tools I work with regularly." data-pl="Języki, frameworki, domeny i narzędzia, z których regularnie korzystam.">
+      Languages, frameworks, domains and tools I work with regularly.
+    </p>
+  </div>
 
-<div class="domain">
-  <div class="domain-title">Programming Languages</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Primary</div>
-      <div class="items">Python<br>C++<br>Java<br>C#</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Mobile & Systems</div>
-      <div class="items">Swift<br>C<br>Bash<br>Unix shell</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Functional & Other</div>
-      <div class="items">Haskell<br>SQL<br>HTML / CSS<br>JavaScript</div>
+  <!-- PROGRAMMING -->
+  <div class="domain">
+    <div class="domain-title" data-en="Programming Languages" data-pl="Języki programowania">Programming Languages</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Primary" data-pl="Główne">Primary</div>
+        <ul class="items">
+          <li>Python</li><li>C++</li><li>Java</li><li>C#</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Systems & Mobile" data-pl="Systemowe i mobilne">Systems & Mobile</div>
+        <ul class="items">
+          <li>Swift</li><li>C</li><li>Bash</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Other" data-pl="Inne">Other</div>
+        <ul class="items">
+          <li>Haskell</li><li>JavaScript</li><li>Erlang</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Machine Learning & AI</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Frameworks</div>
-      <div class="items">PyTorch<br>TensorFlow<br>scikit-learn<br>CoreML (iOS)</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Architectures</div>
-      <div class="items">CNN / RNN / LSTM<br>Transformer<br>Diffusion models<br>Multi-task learning</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Techniques</div>
-      <div class="items">LoRA fine-tuning<br>3D Gaussian Splatting<br>Inpainting<br>On-device inference</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Data & Analysis</div>
-      <div class="items">pandas · numpy<br>matplotlib<br>Wavelet denoising<br>WFDB format</div>
+  <!-- ALGORITHMS (NEW) -->
+  <div class="domain">
+    <div class="domain-title">Algorithms & Theory</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Algorithms</div>
+        <ul class="items">
+          <li>Sorting / searching</li><li>Graph algorithms</li><li>Dynamic programming</li><li>Greedy algorithms</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Complexity</div>
+        <ul class="items">
+          <li>Time / space complexity</li><li>P vs NP</li><li>NP-completeness</li><li>Reductions</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Formal Methods</div>
+        <ul class="items">
+          <li>Finite automata</li><li>Regular languages</li><li>CFG</li><li>Turing machines</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Bioinformatics & Drug Design</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Genomics</div>
-      <div class="items">VCF / BAM<br>GATK · samtools<br>Variant calling<br>DNA pipelines</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Signal Processing</div>
-      <div class="items">ECG analysis<br>QRS / P / T detection<br>Resampling<br>Normalization</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Drug ML — ADMET</div>
-      <div class="items">MTL prediction<br>Molecular descriptors<br>Pharmacokinetics<br>MLDD 2026</div>
+  <!-- MATHEMATICS (NEW) -->
+  <div class="domain">
+    <div class="domain-title">Mathematics</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Discrete</div>
+        <ul class="items">
+          <li>Graph theory</li><li>Combinatorics</li><li>Logic</li><li>Set theory</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Analysis</div>
+        <ul class="items">
+          <li>Limits</li><li>Differentiation</li><li>Integration</li><li>Series</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Probability & Stats</div>
+        <ul class="items">
+          <li>Distributions</li><li>Expected value</li><li>Hypothesis testing</li><li>Inference</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Embedded & Mobile</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Embedded</div>
-      <div class="items">Arduino<br>ESP32<br>BLE / Bluetooth<br>Sensor integration</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">iOS Development</div>
-      <div class="items">SwiftUI<br>CoreBluetooth<br>CoreML<br>WFDB storage</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Game Dev</div>
-      <div class="items">Godot Engine<br>C# scripting<br>Design patterns<br>FSM / OOP</div>
+  <!-- MACHINE LEARNING -->
+  <div class="domain">
+    <div class="domain-title" data-en="Machine Learning" data-pl="Uczenie maszynowe">Machine Learning</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Models" data-pl="Modele">Models</div>
+        <ul class="items">
+          <li>Linear regression</li><li>Random Forest</li><li>SVM</li><li>Neural networks</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Workflow" data-pl="Proces">Workflow</div>
+        <ul class="items">
+          <li>Data preprocessing</li><li>Feature engineering</li><li>Train / test split</li><li>Hyperparameter tuning</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Evaluation" data-pl="Ewaluacja">Evaluation</div>
+        <ul class="items">
+          <li>Accuracy / F1</li><li>ROC / AUC</li><li>Confusion matrix</li><li>Error analysis</li>
+          <li>Cross-validation</li><li>Bias-variance</li><li>Regularization</li><li>Overfitting</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Computer Networks</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Protocols & Routing</div>
-      <div class="items">IPv4 / IPv6<br>VPN<br>Routing protocols<br>VLAN segmentation</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Infrastructure</div>
-      <div class="items">VoIP / SIP<br>Switches · patch panels<br>IP cameras<br>Server admin</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Security & Analysis</div>
-      <div class="items">Wireshark<br>Network security<br>Traffic analysis<br>Firewall config</div>
+
+
+  <!-- ADVANCED ML -->
+  <div class="domain">
+    <div class="domain-title">Advanced ML Models & Concepts</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Generative Models</div>
+        <ul class="items">
+          <li>Autoencoders (VAE)</li>
+          <li>GAN</li>
+          <li>Diffusion models</li>
+          <li>Latent space modeling</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Neural Rendering</div>
+        <ul class="items">
+          <li>NeRF</li>
+          <li>Gaussian Splatting</li>
+          <li>3D scene representation</li>
+          <li>View synthesis</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Learning Paradigms</div>
+        <ul class="items">
+          <li>Few-shot learning</li>
+          <li>Continual learning</li>
+          <li>Transfer learning</li>
+          <li>Representation learning</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Applied Skills</div>
+        <ul class="items">
+          <li>Model selection</li>
+          <li>Result interpretation</li>
+          <li>AI problem formulation</li>
+          <li>Large-scale data analysis</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Cryptography</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Classical</div>
-      <div class="items">Symmetric encryption<br>RSA / ECC<br>Hash functions<br>PKI</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Post-Quantum & Quantum</div>
-      <div class="items">Lattice-based crypto<br>CRYSTALS-Kyber<br>QKD · BB84<br>NIST PQC</div>
+
+
+
+  <!-- GRAPH THEORY / GRAPH ML -->
+  <div class="domain">
+    <div class="domain-title">Graph Theory & Graph ML</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Graph Theory</div>
+        <ul class="items">
+          <li>Graph representations</li>
+          <li>Adjacency / incidence</li>
+          <li>Directed / undirected graphs</li>
+          <li>Weighted graphs</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Algorithms</div>
+        <ul class="items">
+          <li>BFS / DFS</li>
+          <li>Shortest paths (Dijkstra)</li>
+          <li>Spanning trees</li>
+          <li>Connectivity</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Graph ML</div>
+        <ul class="items">
+          <li>Graph embeddings</li>
+          <li>Node classification</li>
+          <li>Link prediction</li>
+          <li>Graph-based features</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Applications</div>
+        <ul class="items">
+          <li>Social networks</li>
+          <li>Biological networks</li>
+          <li>Molecular graphs</li>
+          <li>Knowledge graphs</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="domain">
-  <div class="domain-title">Tools & Systems</div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <div class="cat">Dev Tools</div>
-      <div class="items">Git · GitHub<br>WebStorm · VS Code<br>Xcode<br>Jupyter</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Systems</div>
-      <div class="items">Linux / Unix<br>Bash scripting<br>Docker (basics)<br>SSH · remote admin</div>
-    </div>
-    <div class="skill-card">
-      <div class="cat">Languages</div>
-      <div class="items">Polish — native<br>English — C1</div>
+  <!-- DATA ENGINEERING (NEW) -->
+  <div class="domain">
+    <div class="domain-title">Data Engineering</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Databases</div>
+        <ul class="items">
+          <li>Relational databases</li><li>SQL optimization</li><li>Normalization</li><li>Indexing</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Big Data</div>
+        <ul class="items">
+          <li>Distributed systems</li><li>ETL</li><li>Data pipelines</li><li>Storage systems</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Processing</div>
+        <ul class="items">
+          <li>Batch processing</li><li>Data cleaning</li><li>Transformation</li><li>Data modeling</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-</div>
+
+  <!-- ML DRUG DESIGN -->
+  <div class="domain">
+    <div class="domain-title" data-en="ML in Drug Design" data-pl="ML w projektowaniu leków">ML in Drug Design</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Molecular Data" data-pl="Dane molekularne">Molecular Data</div>
+        <ul class="items">
+          <li>SMILES</li><li>Molecular descriptors</li><li>Fingerprints</li><li>RDKit</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Methods" data-pl="Metody">Methods</div>
+        <ul class="items">
+          <li>QSAR</li><li>Virtual screening</li><li>ADMET prediction</li><li>Regression models</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Data Sources" data-pl="Źródła danych">Data Sources</div>
+        <ul class="items">
+          <li>ChEMBL</li><li>PubChem</li><li>ZINC</li><li>Dataset preprocessing</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BIOINFORMATICS -->
+  <div class="domain">
+    <div class="domain-title" data-en="Bioinformatics" data-pl="Bioinformatyka">Bioinformatics</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Data" data-pl="Dane">Data</div>
+        <ul class="items">
+          <li>DNA / RNA</li><li>FASTA / VCF</li><li>BAM files</li><li>Protein data</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Tools" data-pl="Narzędzia">Tools</div>
+        <ul class="items">
+          <li>BLAST</li><li>GATK</li><li>samtools</li><li>Pipelines</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Analysis" data-pl="Analiza">Analysis</div>
+        <ul class="items">
+          <li>Sequence alignment</li><li>Variant calling</li><li>Phylogenetics (basic)</li><li>Data interpretation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BIOMETRICS -->
+  <div class="domain">
+    <div class="domain-title" data-en="Biometrics" data-pl="Biometria">Biometrics</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Modalities" data-pl="Modalności">Modalities</div>
+        <ul class="items">
+          <li>Face recognition</li><li>Fingerprints</li><li>Iris</li><li>Voice</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Processing" data-pl="Przetwarzanie">Processing</div>
+        <ul class="items">
+          <li>Image preprocessing</li><li>Feature extraction</li><li>Signal processing</li><li>Pattern matching</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="ML usage" data-pl="Zastosowanie ML">ML usage</div>
+        <ul class="items">
+          <li>Classification</li><li>CNN basics</li><li>Feature vectors</li><li>Evaluation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LOW LEVEL -->
+  <div class="domain">
+    <div class="domain-title" data-en="Low-level & Systems" data-pl="Niskopoziomowe i systemowe">Low-level & Systems</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Architecture" data-pl="Architektura">Architecture</div>
+        <ul class="items">
+          <li>x86 / x86_64</li><li>Memory layout</li><li>Cache</li><li>Branch prediction</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Assembly & C++" data-pl="Assembler i C++">Assembly & C++</div>
+        <ul class="items">
+          <li>Calling conventions</li><li>System V ABI</li><li>Intrinsics</li><li>ASM + C/C++</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Optimization" data-pl="Optymalizacja">Optimization</div>
+        <ul class="items">
+          <li>SSE / AVX</li><li>Loop optimization</li><li>Memory access</li><li>Profiling</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPERATING SYSTEMS (NEW) -->
+  <div class="domain">
+    <div class="domain-title">Operating Systems</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat">Core</div>
+        <ul class="items">
+          <li>Processes / threads</li><li>Scheduling</li><li>Memory management</li><li>Virtual memory</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Concurrency</div>
+        <ul class="items">
+          <li>Mutex / semaphores</li><li>Deadlocks</li><li>Synchronization</li><li>Race conditions</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat">Systems</div>
+        <ul class="items">
+          <li>File systems</li><li>System calls</li><li>IPC</li><li>Unix internals</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NETWORKS -->
+  <div class="domain">
+    <div class="domain-title" data-en="Computer Networks" data-pl="Sieci komputerowe">Computer Networks</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Protocols" data-pl="Protokoły">Protocols</div>
+        <ul class="items">
+          <li>IPv4 / IPv6</li><li>TCP / UDP</li><li>DNS</li><li>Routing</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Infrastructure" data-pl="Infrastruktura">Infrastructure</div>
+        <ul class="items">
+          <li>Routers / switches</li><li>VoIP / SIP</li><li>Servers</li><li>IP cameras</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Security" data-pl="Bezpieczeństwo">Security</div>
+        <ul class="items">
+          <li>Wireshark</li><li>Traffic analysis</li><li>Firewall</li><li>Network security</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CRYPTOGRAPHY -->
+  <div class="domain">
+    <div class="domain-title" data-en="Cryptography" data-pl="Kryptografia">Cryptography</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Classical & Modern" data-pl="Klasyczna i współczesna">Classical & Modern</div>
+        <ul class="items">
+          <li>AES</li><li>RSA</li><li>SHA</li><li>Digital signatures</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Protocols & Concepts" data-pl="Protokoły i koncepcje">Protocols & Concepts</div>
+        <ul class="items">
+          <li>TLS / HTTPS</li><li>Diffie–Hellman</li><li>PKI</li><li>Authentication</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Post-Quantum & Advanced" data-pl="Post-kwantowa i zaawansowana">Post-Quantum & Advanced</div>
+        <ul class="items">
+          <li>Lattice crypto</li><li>CRYSTALS-Kyber</li><li>ECC</li><li>BB84</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="domain">
+    <div class="domain-title" data-en="Tools & Systems" data-pl="Narzędzia i systemy">Tools & Systems</div>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <div class="cat" data-en="Dev Tools" data-pl="Narzędzia dev">Dev Tools</div>
+        <ul class="items">
+          <li>Git / GitHub</li><li>VS Code</li><li>Xcode</li><li>JetBrains</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Systems" data-pl="Systemy">Systems</div>
+        <ul class="items">
+          <li>Linux / Unix</li><li>Bash</li><li>Docker</li><li>SSH</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <div class="cat" data-en="Languages" data-pl="Języki">Languages</div>
+        <ul class="items">
+          <li>Polish — native</li><li>English — C1</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 
 </Layout>
+
+<style>
+  .items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .items li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .items li::before {
+    content: "– ";
+    opacity: 0.6;
+  }
+</style>

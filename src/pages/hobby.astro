@@ -4,58 +4,83 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Hobby" current="/hobby">
 
-<div class="page-header">
-  <div class="eyebrow">// outside the lab</div>
-  <h1>Hobby</h1>
-  <p>Things I do when I'm not writing code or reading papers.</p>
-</div>
+  <div class="page-header">
+    <div class="eyebrow" data-en="// after hours" data-pl="// po godzinach">// po godzinach</div>
+    <h1 data-en="Hobby" data-pl="Zainteresowania">Zainteresowania</h1>
+    <p data-en="What keeps me curious." data-pl="Co napędza moją ciekawość">What keeps me curious when the laptop lid is closed.</p>
+  </div>
 
-<div class="hobby-grid">
-  <div class="hobby-card">
-    <span class="icon">🔭</span>
-    <h3>Astronomy</h3>
-    <p>Astrophotography and observational astronomy. Particularly interested in deep-sky objects and long-exposure imaging.</p>
+  <div class="hobby-grid">
+    <!-- NAUKA I UMYSŁ -->
+    <div class="hobby-card">
+      <span class="icon">🧠</span>
+      <h3 data-en="Psychology" data-pl="Psychologia">Psychology</h3>
+      <p data-en="Fascinated by social psychology, famous experiments, and the inner workings of the human mind." data-pl="Fascynuje mnie psychologia społeczna, słynne eksperymenty i to, jak właściwie działa ludzki umysł.">Fascinated by social psychology, famous experiments, and the inner workings of the human mind.</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">🌌</span>
+      <h3 data-en="Astronomy" data-pl="Astronomia">Astronomia</h3>
+      <p data-en="Contemplating the mysteries of the cosmos and the fundamental laws that govern our universe." data-pl="Zgłębianie tajemnic kosmosu i praw, które rządzą wszechświatem.">Contemplating the mysteries of the cosmos and the fundamental laws that govern our universe.</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">🧬</span>
+      <h3 data-en="Biology" data-pl="Biologia">Biologia</h3>
+      <p data-en="General interest in the complexity of life, from cellular structures to global ecosystems." data-pl="Ogólne zainteresowanie złożonością życia – od struktur komórkowych po całe ekosystemy.">General interest in the complexity of life, from cellular structures to global ecosystems.</p>
+    </div>
+
+    <!-- SPORT -->
+    <div class="hobby-card">
+      <span class="icon">🎾</span>
+      <h3 data-en="Sports & Fitness" data-pl="Sport i Fitness">Sports & Fitness</h3>
+      <p data-en="Active tennis player, cyclist, and gym enthusiast. Former football, karate, and table tennis team member." data-pl="Gram w tenisa, jeżdżę na rowerze i chodzę na siłownię. Kiedyś trenowałem piłkę nożną, karate i ping-ponga.">Active tennis player, cyclist, and gym enthusiast. Former football, karate, and table tennis team member.</p>
+    </div>
+
+    <!-- NATURA -->
+    <div class="hobby-card">
+      <span class="icon">🏔️</span>
+      <h3 data-en="Mountains" data-pl="Góry">Góry</h3>
+      <p data-en="Hiking through the Tatras and the Alps. Finding peace and perspective on the highest trails." data-pl="Wędrówki po Tatrach i Alpach. Szukanie spokoju i perspektywy na najwyższych szlakach.">Hiking through the Tatras and the Alps. Finding peace and perspective on the highest trails.</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">🦅</span>
+      <h3 data-en="Wildlife" data-pl="Dzika Przyroda">Dzika Przyroda</h3>
+      <p data-en="Observing birds and wild animals in their natural habitat. Nature photography and mindfulness." data-pl="Obserwacja ptaków i dzikiej zwierzyny w ich naturalnym środowisku. Kontakt z naturą w czystej postaci.">Observing birds and wild animals in their natural habitat. Nature photography and mindfulness.</p>
+    </div>
+
+    <!-- KULINARIA I MIASTO -->
+    <div class="hobby-card">
+      <span class="icon">🍳</span>
+      <h3 data-en="Culinary Arts" data-pl="Kulinaria">Kulinaria</h3>
+      <p data-en="Cooking Thai, traditional Polish, and Italian (the king of simplicity). Huge fan of seafood." data-pl="Gotowanie kuchni tajskiej, polskiej i włoskiej (za jej prostotę). Uwielbiam owoce morza.">Cooking Thai, traditional Polish, and Italian (the king of simplicity). Huge fan of seafood.</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">☕</span>
+      <h3 data-en="City Life" data-pl="Życie Miejskie">City Life</h3>
+      <p data-en="Exploring Kraków's food scene, hunting for the best coffee/tea, and discovering hidden city spots." data-pl="Odkrywanie krakowskiej gastronomii, szukanie najlepszej kawy i herbaty oraz ciekawych zakamarków miasta.">Exploring Kraków's food scene, hunting for the best coffee/tea, and discovering hidden city spots.</p>
+    </div>
+
+    <!-- ROZRYWKA I TECH -->
+    <div class="hobby-card">
+      <span class="icon">🎮</span>
+      <h3 data-en="Gaming" data-pl="Gry">Gaming</h3>
+      <p data-en="RPG lover with a focus on great storytelling. Playing on PC, Nintendo, and PS4." data-pl="Miłośnik gier RPG z dobrą fabułą. Gram na PC, konsolach Nintendo oraz PS4.">RPG lover with a focus on great storytelling. Playing on PC, Nintendo, and PS4.</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">🎤</span>
+      <h3 data-en="Music & Events" data-pl="Muzyka i Wydarzenia">Muzyka i Wydarzenia</h3>
+      <p data-en="Long-time hip-hop head. Regularly attending concerts (from Giżycko to local Juwenalia)." data-pl="Od lat słucham hip-hopu. Regularnie bywam na koncertach – od Mazur po krakowskie Juwenalia.">Long-time hip-hop head. Regularly attending concerts (from Giżycko to local Juwenalia).</p>
+    </div>
+
+    <div class="hobby-card">
+      <span class="icon">💻</span>
+      <h3 data-en="Tech Curiosity" data-pl="Nowe Technologie">Nowe Technologie</h3>
+      <p data-en="Deep diving into how computers and new gadgets work. Just love seeing the gear behind the code." data-pl="Zgłębianie tego, jak działają komputery i nowe gadżety. Po prostu lubię rozumieć hardware.">Deep diving into how computers and new gadgets work. Just love seeing the gear behind the code.</p>
+    </div>
   </div>
-  <div class="hobby-card">
-    <span class="icon">🧬</span>
-    <h3>Biology & Genetics</h3>
-    <p>Reading about molecular biology, evolution and the science behind the data I work with. Genomics makes more sense when you find it genuinely interesting.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">🔌</span>
-    <h3>Electronics</h3>
-    <p>Breadboards, microcontrollers, sensors. Building things that interact with the physical world — same impulse behind the ECG hardware project.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">🏔️</span>
-    <h3>Hiking</h3>
-    <p>Mountains and trails — Tatry, Beskidy. Long walks with no screens are good for thinking through hard problems.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">📐</span>
-    <h3>Mathematics</h3>
-    <p>Recreational math, number theory, puzzles. Math for its own sake — not just as a tool for ML.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">🌐</span>
-    <h3>Homelab & Networks</h3>
-    <p>Running local servers, experimenting with VLANs and network configurations. The home version of what I do professionally.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">🎮</span>
-    <h3>Game Development</h3>
-    <p>Building games in Godot — more interested in the software architecture and systems design than the game itself.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">♟️</span>
-    <h3>Strategy Games</h3>
-    <p>Grand strategy, city builders, simulation. Appreciate games with deep underlying systems and emergent behavior.</p>
-  </div>
-  <div class="hobby-card">
-    <span class="icon">📚</span>
-    <h3>Reading</h3>
-    <p>AI research papers, popular science, medicine. Trying to stay informed about the frontier of ML and biology.</p>
-  </div>
-</div>
 
 </Layout>

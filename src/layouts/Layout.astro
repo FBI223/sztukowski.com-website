@@ -14,38 +14,62 @@ const {
 } = Astro.props;
 
 const nav = [
-  { href: '/',         label: 'Home'     },
-  { href: '/about',    label: 'About'    },
-  { href: '/skills',   label: 'Skills'   },
-  { href: '/projects', label: 'Projects' },
-  { href: '/courses',  label: 'Courses'  },
-  { href: '/hobby',    label: 'Hobby'    },
-  { href: '/cv',       label: 'CV'       },
+  { href: '/',         en: 'Home',     pl: 'Start'    },
+  { href: '/about',    en: 'About',    pl: 'O mnie'   },
+  { href: '/experience', en: 'Experience', pl: 'Doświadczenie' }, // <-- DODAJ TO
+  { href: '/skills',   en: 'Skills',   pl: 'Umiej.'   },
+  { href: '/projects', en: 'Projects', pl: 'Projekty' },
+  { href: '/courses',  en: 'Courses',  pl: 'Kursy'    },
+  { href: '/hobby',    en: 'Hobby',    pl: 'Hobby'    },
+  { href: '/cv',       en: 'CV',       pl: 'CV'       },
 ];
+
+const pageTitle = title === 'Home' ? 'Marcin Sztukowski' : `${title} · Marcin Sztukowski`;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
-  <title>{title === 'Home' ? 'Marcin Sztukowski' : `${title} · Marcin Sztukowski`}</title>
+  <title>{pageTitle}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Apply saved preferences BEFORE paint — eliminates flash -->
+  <script is:inline>
+    (function () {
+      const t = localStorage.getItem('theme') || 'dark';
+      const l = localStorage.getItem('lang')  || 'en';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.setAttribute('data-lang',  l);
+    })();
+  </script>
 </head>
 <body>
 
   <header class="topbar">
     <a href="/" class="topbar-logo">Marcin <span>Sztukowski</span></a>
+
     <nav class="topbar-nav">
-      {nav.map(({ href, label }) => (
-        <a href={href} class={current === href ? 'active' : ''}>
-          {label}
+      {nav.map(({ href, en, pl }) => (
+        <a
+          href={href}
+          class={current === href ? 'active' : ''}
+          data-en={en}
+          data-pl={pl}
+        >
+          {en}
         </a>
       ))}
     </nav>
+
+    <div class="topbar-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language" title="Switch language">POLSKI</button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle dark/light mode">THEME</button>
+    </div>
   </header>
 
   <main class="wrapper">
@@ -53,11 +77,52 @@ const nav = [
   </main>
 
   <footer>
-    <span>© 2025 Marcin Sztukowski</span>
-    <a href="https://github.com/FBI223" target="_blank" rel="noopener">
-      github.com/FBI223
-    </a>
+    <span>© 2026 Marcin Sztukowski</span>
+    <a href="https://github.com/FBI223" target="_blank" rel="noopener">github.com/FBI223</a>
   </footer>
+
+  <script is:inline>
+    const html     = document.documentElement;
+    const themeBtn = document.getElementById('theme-btn');
+    const langBtn  = document.getElementById('lang-btn');
+
+    /* ── THEME ────────────────────────────────────────── */
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeBtn.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
+      themeBtn.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ── LANGUAGE ─────────────────────────────────────── */
+    function applyLang(lang) {
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      localStorage.setItem('lang', lang);
+
+      // Swap every element that has data-en and data-pl attributes
+      document.querySelectorAll('[data-en][data-pl]').forEach(el => {
+        el.textContent = lang === 'pl' ? el.dataset.pl : el.dataset.en;
+      });
+
+      // Button shows the OTHER language (what you'll switch TO)
+      langBtn.textContent = lang === 'en' ? 'POLSKI' : 'ENGLISH';
+      langBtn.title = lang === 'en' ? 'Przełącz na polski' : 'Switch to English';
+      langBtn.classList.toggle('active-lang', lang === 'pl');
+    }
+
+    langBtn.addEventListener('click', () => {
+      applyLang(html.getAttribute('data-lang') === 'en' ? 'pl' : 'en');
+    });
+
+    /* ── INIT (run after DOM ready, use saved prefs) ─── */
+    applyTheme(html.getAttribute('data-theme') || 'dark');
+    applyLang(html.getAttribute('data-lang')   || 'en');
+  </script>
 
 </body>
 </html>

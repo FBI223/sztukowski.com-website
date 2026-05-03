@@ -20,16 +20,36 @@ import Layout from '../layouts/Layout.astro';
   }
 </style>
 
-<div class="page-header">
-  <div class="eyebrow">// curriculum vitae</div>
-  <h1>CV</h1>
-  <p>Full curriculum vitae — view inline or download as PDF.</p>
-</div>
+  <div class="page-header">
+    <div class="eyebrow" data-en="// curriculum vitae" data-pl="// życiorys">// curriculum vitae</div>
+    <h1 data-en="CV" data-pl="CV">CV</h1>
+    <p
+        data-en="Full curriculum vitae — view inline or download as PDF."
+        data-pl="Pełne CV — przeglądaj na stronie lub pobierz jako PDF.">
+      Full curriculum vitae — view inline or download as PDF.
+    </p>
+  </div>
 
-<div class="cv-actions">
-  <a href="/cv.pdf" download class="btn btn-primary">Download PDF ↓</a>
-  <a href="/cv.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Open in new tab ↗</a>
-</div>
+  <div class="cv-actions">
+    <a
+        href="/cv.pdf"
+        download
+        class="btn btn-primary"
+        data-en="Download PDF ↓"
+        data-pl="Pobierz PDF ↓">
+      Download PDF ↓
+    </a>
+
+    <a
+        href="/cv.pdf"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+        data-en="Open in new tab ↗"
+        data-pl="Otwórz w nowej karcie ↗">
+      Open in new tab ↗
+    </a>
+  </div>
 
 <embed src="/cv.pdf" type="application/pdf" class="pdf-frame" />
 

@@ -4,128 +4,230 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="About" current="/about">
 
-<div class="page-header">
-  <div class="eyebrow">// about me</div>
-  <h1>Background</h1>
-  <p>Professional profile, education and work experience.</p>
-</div>
-
-<div class="stat-row">
-  <div class="stat"><div class="val">MSc</div><div class="lbl">CS · Jagiellonian University Kraków</div></div>
-  <div class="stat"><div class="val">4+</div><div class="lbl">Years in IT &amp; networking</div></div>
-  <div class="stat"><div class="val">3</div><div class="lbl">Research projects at GMUM</div></div>
-  <div class="stat"><div class="val">C1</div><div class="lbl">English proficiency</div></div>
-</div>
-
-<div class="sec-label">Profile</div>
-
-<div class="bio-card">
-  I am a <strong>Computer Science MSc student at the Jagiellonian University in Kraków</strong>,
-  where I previously completed my BSc. My academic path is deliberately interdisciplinary —
-  an earlier BSc in Economics at the University of Warsaw gave me a foundation in quantitative
-  reasoning before I committed fully to CS.
-</div>
-<div class="bio-card">
-  My core research focus is <strong>applied machine learning in medicine and biology</strong> —
-  problems that require bridging multiple domains simultaneously. Building a working ECG classifier
-  means understanding both signal processing and deep learning; predicting ADMET drug profiles
-  requires knowledge of chemistry, biology, and multi-task learning architecture.
-</div>
-<div class="hbox">
-  <strong>Current focus:</strong> ADMET property prediction using multi-task learning (MTL) as part
-  of the ML in Drug Design course at GMUM / Jagiellonian University. Exploring how shared
-  representations across pharmacokinetic endpoints improve data efficiency and generalization.
-</div>
-<div class="bio-card">
-  Before and alongside my CS studies I have worked in <strong>IT support and network
-  engineering</strong> in the United States — VoIP systems, VLAN segmentation, server administration
-  and complete network overhauls for a financial firm in Connecticut.
-</div>
-<div class="bio-card">
-  I write primarily in <strong>Python, C++, and Java</strong>, with significant work in Swift
-  (iOS / CoreML) and C# (Godot, .NET). I approach software with an emphasis on correctness and
-  clean architecture.
-</div>
-
-<div class="sec-label">Education</div>
-<div class="timeline">
-  <div class="tl-item">
-    <div class="date">Jul 2025 – present</div>
-    <h4>MSc Computer Science</h4>
-    <div class="org">Jagiellonian University, Kraków</div>
-    <p>Machine learning · bioinformatics · deep learning · quantum cryptography · networks · drug design ML</p>
+  <div class="page-header">
+    <div class="eyebrow" data-en="// executive summary" data-pl="// profil zawodowy">// executive summary</div>
+    <h1 data-en="Engineering Background" data-pl="Profil inżynierski">Engineering Background</h1>
+    <p data-en="Bridging the gap between advanced research and production-ready systems." data-pl="Łączenie zaawansowanych badań naukowych z systemami produkcyjnymi.">
+      Bridging the gap between advanced research and production-ready systems.
+    </p>
   </div>
-  <div class="tl-item">
-    <div class="date">Oct 2021 – Jul 2025</div>
-    <h4>BSc Computer Science</h4>
-    <div class="org">Jagiellonian University, Kraków</div>
-    <p>Algorithms · numerical methods · software engineering · functional programming · networks · databases</p>
-  </div>
-  <div class="tl-item">
-    <div class="date">Oct 2019 – Sep 2021</div>
-    <h4>BSc Economics (incomplete)</h4>
-    <div class="org">University of Warsaw, Warsaw</div>
-    <p>Transferred to pursue CS full-time.</p>
-  </div>
-  <div class="tl-item">
-    <div class="date">Sep 2016 – May 2019</div>
-    <h4>High School — Matura</h4>
-    <div class="org">VILO, Białystok</div>
-  </div>
-</div>
 
-<div class="sec-label">Work Experience</div>
-
-<div class="work-card">
-  <div class="work-header">
-    <div class="work-title">IT Support / Lead Server Administrator</div>
-    <div class="work-date">Jan 2022 – present</div>
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat">
+      <div class="val">MSc</div>
+      <div class="lbl" data-en="CS · Jagiellonian University" data-pl="Informatyka · UJ Kraków">CS · Jagiellonian University</div>
+    </div>
+    <div class="stat">
+      <div class="val">5+</div>
+      <div class="lbl" data-en="Years in Tech & Admin" data-pl="Lat programowania">Years programming</div>
+    </div>
+    <div class="stat">
+      <div class="val">AI/ML</div>
+      <div class="lbl" data-en="Researcher @ GMUM" data-pl="Specialization">Specialization </div>
+    </div>
+    <div class="stat">
+      <div class="val">C1</div>
+      <div class="lbl" data-en="English proficiency" data-pl="Poziom języka angielskiego">English proficiency</div>
+    </div>
   </div>
-  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA (remote)</div>
-  <div class="work-body"><ul>
-    <li>Remote support for computing systems, VoIP, printers, email and data server</li>
-    <li>Hardware/software upgrades and system optimizations</li>
-  </ul></div>
-</div>
 
-<div class="work-card">
-  <div class="work-header">
-    <div class="work-title">Network Engineer</div>
-    <div class="work-date">Dec 2024 – Jan 2025</div>
-  </div>
-  <div class="work-org">New Britain, CT, USA</div>
-  <div class="work-body"><ul>
-    <li>Complete overhaul of building IT and network infrastructure</li>
-    <li>Routers, switches, patch panels, IP cameras, new cabling</li>
-    <li>VoIP server, VLAN segmentation, traffic routing, public IPs per office</li>
-  </ul></div>
-</div>
+  <div class="sec-label" data-en="Profile" data-pl="Profil">Profile</div>
 
-<div class="work-card">
-  <div class="work-header">
-    <div class="work-title">Mathematics Tutor</div>
-    <div class="work-date">Jan 2022 – present</div>
-  </div>
-  <div class="work-org">Private</div>
-  <div class="work-body">High school mathematics — core concepts and Matura exam preparation.</div>
-</div>
+  <div class="bio-container">
+    <div class="bio-card"
+         data-en="I am a Computer Science MSc student at the Jagiellonian University in Kraków, specializing in the intersection of Deep Learning and Bioinformatics. My approach to engineering is defined by a strong analytical foundation—leveraging mathematics, algorithms, and formal methods to solve complex computational problems."
+         data-pl="Jestem studentem studiów magisterskich Informatyki na Uniwersytecie Jagiellońskim, specjalizującym się w styku Deep Learningu i Bioinformatyki. Moje podejście do inżynierii opiera się na silnych podstawach analitycznych — wykorzystuję matematykę, algorytmy i metody formalne do rozwiązywania złożonych problemów obliczeniowych.">
+      I am a <strong>Computer Science MSc student at the Jagiellonian University in Kraków</strong>, specializing in the intersection of Deep Learning and Bioinformatics.
+    </div>
 
-<div class="work-card">
-  <div class="work-header">
-    <div class="work-title">Tax Office Assistant</div>
-    <div class="work-date">Jun 2022 – Jan 2023</div>
+    <div class="bio-card"
+         data-en="My technical versatility stems from years of practical experience in the United States, where I managed large-scale server environments and technical support. This background allows me to understand the full lifecycle of a project—from the low-level hardware constraints to high-level AI model deployment."
+         data-pl="Moja wszechstronność techniczna wynika z lat praktycznego doświadczenia w Stanach Zjednoczonych, gdzie zarządzałem środowiskami serwerowymi na dużą skalę i wsparciem technicznym. Pozwala mi to zrozumieć pełny cykl życia projektu — od niskopoziomowych ograniczeń sprzętowych po wdrażanie modeli AI wysokiego poziomu.">
+      My technical versatility stems from years of practical experience in the <strong>United States</strong>, where I managed large-scale server environments and technical support.
+    </div>
   </div>
-  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA</div>
-  <div class="work-body">Income tax returns, IRS and insurance audits, invoice issuance, IT support.</div>
-</div>
 
-<div class="work-card">
-  <div class="work-header">
-    <div class="work-title">Seasonal Tax Office Assistant</div>
-    <div class="work-date">Jul 2016 – Sep 2020</div>
+  <div class="hbox">
+    <strong data-en="Current focus:" data-pl="Aktualny Projekt:">Current focus:</strong>
+    <span
+        data-en="ADMET property prediction using multi-task learning (MTL) as part of the ML in Drug Design course at GMUM / Jagiellonian University. Exploring how shared representations across pharmacokinetic endpoints improve data efficiency and generalization."
+        data-pl="Predykcja właściwości ADMET z użyciem uczenia wielozadaniowego (MTL) w ramach kursu ML w Projektowaniu Leków na GMUM / UJ. Badanie jak wspólne reprezentacje między punktami farmakokinetycznymi poprawiają efektywność danych i generalizację.">
+    ADMET property prediction using multi-task learning (MTL) as part of the ML in Drug Design course at GMUM / Jagiellonian University. Exploring how shared representations across pharmacokinetic endpoints improve data efficiency and generalization.
+  </span>
   </div>
-  <div class="work-org">J&amp;J Financial Associates LLC · New Britain, CT, USA</div>
-  <div class="work-body">Tax filing, document proofreading, sales and property tax, IT support.</div>
-</div>
+
+  <div class="sec-label" data-en="Strategic Skillset" data-pl="Kompetencje strategiczne">Strategic Skillset</div>
+
+  <div class="pro-grid">
+    <!-- 01: LOW LEVEL -->
+    <div class="pro-card highlight">
+      <div class="icon">01</div>
+      <h3 data-en="Low-Level Programming" data-pl="Programowanie niskopoziomowe">Low-Level Programming</h3>
+      <p data-en="Expertise in C/C++ and x86_64 Assembly. Proficient in manual memory management, SIMD optimization (AVX/SSE), and understanding hardware architectural constraints for high-performance computing."
+         data-pl="Ekspertyza w C/C++ i Assembly x86_64. Biegłość w ręcznym zarządzaniu pamięcią, optymalizacji SIMD (AVX/SSE) i zrozumieniu ograniczeń architektury sprzętowej dla obliczeń o wysokiej wydajności.">
+        Expertise in C/C++, Assembly, and SIMD optimization.
+      </p>
+    </div>
+
+    <!-- 02: BIO/MED/BIOINFORMATICS -->
+    <div class="pro-card highlight">
+      <div class="icon">02</div>
+      <h3 data-en="Bioinformatics & MedTech" data-pl="Bioinformatyka i MedTech">Bioinformatics & MedTech</h3>
+      <p data-en="Developed ECG monitoring systems (ECGApp) with real-time ML classification on iOS. Experienced in processing genomic data (VCF, BAM) and biological signals like ECG."
+         data-pl="Rozwój systemów monitorowania EKG (ECGApp) z klasyfikacją ML w czasie rzeczywistym na iOS. Doświadczenie w przetwarzaniu danych genomicznych (VCF, BAM) i sygnałów biologicznych.">
+        Medical signal processing and genomic data analysis.
+      </p>
+    </div>
+
+    <!-- 03: MACHINE LEARNING -->
+    <div class="pro-card highlight">
+      <div class="icon">03</div>
+      <h3 data-en="Advanced Machine Learning" data-pl="Zaawansowany ML">Advanced Machine Learning</h3>
+      <p data-en="Hands-on experience with Diffusion models (FLUX, LoRA), GNNs, and Multi-Task Learning. Integrated Depth Anything v2 into 3D reconstruction pipelines."
+         data-pl="Praktyczne doświadczenie z modelami dyfuzyjnymi (FLUX, LoRA), sieciami grafowymi (GNN) oraz Multi-Task Learning. Integracja Depth Anything v2 w potokach rekonstrukcji 3D.">
+        Diffusion models, GNNs, and Multi-Task Learning.
+      </p>
+    </div>
+
+    <!-- 04: SOFTWARE ENGINEERING -->
+    <div class="pro-card highlight">
+      <div class="icon">04</div>
+      <h3 data-en="Software Engineering" data-pl="Inżynieria oprogramowania">Software Engineering</h3>
+      <p data-en="Applying rigorous design patterns (Strategy, Factory, State) in Godot (C#) and iOS (Swift). Focused on modular, object-oriented architecture and clean code principles."
+         data-pl="Stosowanie wzorców projektowych (Strategia, Fabryka, Stan) w Godot (C#) i iOS (Swift). Skupienie na modułowej architekturze obiektowej i zasadach clean code.">
+        Modular architecture and design patterns (C#, Swift, Python).
+      </p>
+    </div>
+
+    <!-- 05: SYSTEMS & INFRASTRUCTURE -->
+    <div class="pro-card highlight">
+      <div class="icon">05</div>
+      <h3 data-en="Systems & Administration" data-pl="Systemy i Administracja">Systems & Administration</h3>
+      <p data-en="Lead Server Administrator for financial firm in USA. Managing data servers, VoIP systems, and optimizing infrastructure via Docker and Linux internals."
+         data-pl="Główny Administrator Serwerów dla firmy finansowej w USA. Zarządzanie serwerami danych, systemami VoIP i optymalizacja infrastruktury (Docker, Linux).">
+        Lead Server Admin and Docker/Linux systems optimization.
+      </p>
+    </div>
+
+    <!-- 06: NETWORKING -->
+    <div class="pro-card highlight">
+      <div class="icon">06</div>
+      <h3 data-en="Network Engineering" data-pl="Inżynieria sieciowa">Network Engineering</h3>
+      <p data-en="Executed complete building network overhauls including VLAN segmentation, VoIP server configuration, and traffic routing. Expertise in networking hardware and infrastructure security."
+         data-pl="Przeprowadzanie kompletnych modernizacji sieci budynków, w tym segmentacja VLAN, konfiguracja serwerów VoIP i routing ruchu. Ekspertyza w sprzęcie sieciowym i bezpieczeństwie.">
+        Enterprise network engineering and infrastructure security.
+      </p>
+    </div>
+  </div>
+
+  <div class="sec-label" data-en="Professional Approach" data-pl="Podejście zawodowe">Professional Approach</div>
+
+  <div class="bio-card"
+       data-en="My work ethic is built on accountability, forged through years of managing sensitive technical systems and financial support in the USA. I combine the precision required in fiscal environments with the innovative mindset needed for ML research. As a mathematics tutor, I prioritize clear communication and the ability to explain complex logic—qualities I bring to every software engineering team."
+       data-pl="Moja etyka pracy opiera się na odpowiedzialności, wypracowanej przez lata zarządzania systemami technicznymi i wsparciem finansowym w USA. Łączę precyzję wymaganą w środowiskach fiskalnych z innowacyjnym podejściem badawczym w ML. Jako korepetytor matematyki, stawiam na klarowną komunikację i umiejętność wyjaśniania złożonej logiki.">
+    I combine <strong>fiscal-grade precision</strong> from my USA background with <strong>innovative ML research</strong> and <strong>clear communication</strong>.
+  </div>
 
 </Layout>
+
+<style>
+  .bio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .focus-box {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #00ff96;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+
+  .pro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .pro-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .pro-card .icon {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #00ff96;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  .pro-card.highlight:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: #00ff96;
+    box-shadow: 0 15px 35px -15px rgba(0, 255, 150, 0.2);
+  }
+
+  .pro-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  .pro-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .sec-label {
+    margin: 4rem 0 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sec-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+  }
+
+  /* Dodatkowe style dla statystyk, jeśli nie były zdefiniowane */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .stat .val {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00ff96;
+    display: block;
+  }
+
+  .stat .lbl {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 0.5rem;
+  }
+</style>
