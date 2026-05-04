@@ -825,14 +825,15 @@ footer a:hover {
   fill: currentColor;
 }
 
+
 /* LINKEDIN */
-.contact-tile[href*="linkedin"] .icon svg {
+a.contact-tile[href*="linkedin"] .icon svg {
   color: #0A66C2;
 }
 
 /* GITHUB */
-.contact-tile[href*="github"] .icon svg {
-  color: #e6edf3; /* jasny szary (dark mode) */
+a.contact-tile[href*="github"] .icon svg {
+  color: #e6edf3;
 }
 
 /* HOVER (ładny efekt) */
