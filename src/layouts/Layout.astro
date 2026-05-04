@@ -60,7 +60,7 @@ const pageTitle = title === 'Home' ? 'Marcin Sztukowski' : `${title} · Marcin S
       {nav.map(({ href, en, pl }) => (
         <a
           href={href}
-          class={current === href ? 'active' : ''}
+          class={current.startsWith(href) ? 'active' : ''}
           data-en={en}
           data-pl={pl}
         >
