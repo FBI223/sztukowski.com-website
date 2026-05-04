@@ -1,0 +1,737 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Game of Life" current="/game/">
+
+    <div class="gol-wrapper">
+
+        <!-- ── Header ── -->
+        <header class="gol-header">
+            <div class="eyebrow">// cellular automaton · John Conway · 1970</div>
+            <h1>Game <span class="accent">of Life</span></h1>
+            <div class="subtitle-bilingual">
+                <p data-lang-show="en">
+                    Click cells to bring them to life, then press Start. Each cell lives or dies based on its neighbours — that's it. From these four rules, endless patterns emerge.
+                </p>
+                <p data-lang-show="pl">
+                    Kliknij komórki, aby je ożywić, a potem naciśnij Start. Każda komórka żyje lub umiera w zależności od sąsiadów — to wszystko. Z tych czterech reguł wyłaniają się nieskończone wzory.
+                </p>
+            </div>
+        </header>
+
+        <!-- ── Rules ── -->
+        <section class="rules-grid">
+            <div class="rule-card">
+                <div class="rule-card-body">
+                    <div class="rule-card-title" data-en="Loneliness" data-pl="Samotność">Loneliness</div>
+                    <div class="rule-card-desc" data-en="Fewer than 2 neighbours → dies" data-pl="Mniej niż 2 sąsiadów → umiera">Fewer than 2 neighbours → dies</div>
+                </div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-card-body">
+                    <div class="rule-card-title" data-en="Survival" data-pl="Przeżycie">Survival</div>
+                    <div class="rule-card-desc" data-en="2 or 3 neighbours → survives" data-pl="2 lub 3 sąsiadów → przeżywa">2 or 3 neighbours → survives</div>
+                </div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-card-body">
+                    <div class="rule-card-title" data-en="Overcrowding" data-pl="Przeludnienie">Overcrowding</div>
+                    <div class="rule-card-desc" data-en="More than 3 neighbours → dies" data-pl="Więcej niż 3 sąsiadów → umiera">More than 3 neighbours → dies</div>
+                </div>
+            </div>
+            <div class="rule-card">
+                <div class="rule-card-body">
+                    <div class="rule-card-title" data-en="Birth" data-pl="Narodziny">Birth</div>
+                    <div class="rule-card-desc" data-en="Exactly 3 neighbours → born" data-pl="Dokładnie 3 sąsiadów → ożywa">Exactly 3 neighbours → born</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Presets ── -->
+        <section class="presets-section">
+            <h2 class="sec-label" data-en="Pattern Library" data-pl="Biblioteka wzorów">Pattern Library</h2>
+
+            <div class="preset-category">
+                <div class="preset-cat-label" data-en="Oscillators" data-pl="Oscylatory">Oscillators</div>
+                <div class="preset-tiles">
+                    <button class="ptile" data-preset="blinker">
+                        <span class="ptile-name">Blinker</span>
+                        <span class="ptile-tag" data-en="period 2" data-pl="okres 2">period 2</span>
+                    </button>
+                    <button class="ptile" data-preset="toad">
+                        <span class="ptile-name">Toad</span>
+                        <span class="ptile-tag" data-en="period 2" data-pl="okres 2">period 2</span>
+                    </button>
+                    <button class="ptile" data-preset="beacon">
+                        <span class="ptile-name">Beacon</span>
+                        <span class="ptile-tag" data-en="period 2" data-pl="okres 2">period 2</span>
+                    </button>
+                    <button class="ptile" data-preset="pulsar">
+                        <span class="ptile-name">Pulsar</span>
+                        <span class="ptile-tag" data-en="period 3" data-pl="okres 3">period 3</span>
+                    </button>
+                    <button class="ptile" data-preset="pentadecathlon">
+                        <span class="ptile-name">Pentadecathlon</span>
+                        <span class="ptile-tag" data-en="period 15" data-pl="okres 15">period 15</span>
+                    </button>
+                    <button class="ptile" data-preset="clock">
+                        <span class="ptile-name">Clock</span>
+                        <span class="ptile-tag" data-en="period 2" data-pl="okres 2">period 2</span>
+                    </button>
+                    <button class="ptile" data-preset="figure8">
+                        <span class="ptile-name">Figure Eight</span>
+                        <span class="ptile-tag" data-en="period 8" data-pl="okres 8">period 8</span>
+                    </button>
+                    <button class="ptile" data-preset="queen-bee">
+                        <span class="ptile-name">Queen Bee</span>
+                        <span class="ptile-tag" data-en="period 30" data-pl="okres 30">period 30</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preset-category">
+                <div class="preset-cat-label" data-en="Spaceships" data-pl="Statki kosmiczne">Spaceships</div>
+                <div class="preset-tiles">
+                    <button class="ptile" data-preset="glider">
+                        <span class="ptile-name">Glider</span>
+                        <span class="ptile-tag" data-en="diagonal" data-pl="ukośny">diagonal</span>
+                    </button>
+                    <button class="ptile" data-preset="lwss">
+                        <span class="ptile-name">LWSS</span>
+                        <span class="ptile-tag" data-en="horizontal" data-pl="poziomy">horizontal</span>
+                    </button>
+                    <button class="ptile" data-preset="mwss">
+                        <span class="ptile-name">MWSS</span>
+                        <span class="ptile-tag" data-en="horizontal" data-pl="poziomy">horizontal</span>
+                    </button>
+                    <button class="ptile" data-preset="hwss">
+                        <span class="ptile-name">HWSS</span>
+                        <span class="ptile-tag" data-en="horizontal" data-pl="poziomy">horizontal</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preset-category">
+                <div class="preset-cat-label" data-en="Still Lifes" data-pl="Martwe natury">Still Lifes</div>
+                <div class="preset-tiles">
+                    <button class="ptile" data-preset="block">
+                        <span class="ptile-name">Block</span>
+                        <span class="ptile-tag" data-en="stable" data-pl="stabilny">stable</span>
+                    </button>
+                    <button class="ptile" data-preset="beehive">
+                        <span class="ptile-name">Beehive</span>
+                        <span class="ptile-tag" data-en="stable" data-pl="stabilny">stable</span>
+                    </button>
+                    <button class="ptile" data-preset="loaf">
+                        <span class="ptile-name">Loaf</span>
+                        <span class="ptile-tag" data-en="stable" data-pl="stabilny">stable</span>
+                    </button>
+                    <button class="ptile" data-preset="boat">
+                        <span class="ptile-name">Boat</span>
+                        <span class="ptile-tag" data-en="stable" data-pl="stabilny">stable</span>
+                    </button>
+                    <button class="ptile" data-preset="tub">
+                        <span class="ptile-name">Tub</span>
+                        <span class="ptile-tag" data-en="stable" data-pl="stabilny">stable</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preset-category">
+                <div class="preset-cat-label" data-en="Guns &amp; Puffers" data-pl="Działa i dmuchawce">Guns &amp; Puffers</div>
+                <div class="preset-tiles">
+                    <button class="ptile ptile-hot" data-preset="glider-gun">
+                        <span class="ptile-name">Gosper Gun</span>
+                        <span class="ptile-tag" data-en="∞ gliders" data-pl="∞ gliderów">∞ gliders</span>
+                    </button>
+                    <button class="ptile" data-preset="simkin-gun">
+                        <span class="ptile-name">Simkin Gun</span>
+                        <span class="ptile-tag" data-en="period 120" data-pl="okres 120">period 120</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="preset-category">
+                <div class="preset-cat-label" data-en="Methuselahs" data-pl="Matuzalemy">Methuselahs</div>
+                <div class="preset-tiles">
+                    <button class="ptile ptile-hot" data-preset="r-pentomino">
+                        <span class="ptile-name">R-pentomino</span>
+                        <span class="ptile-tag" data-en="1103 gen" data-pl="1103 gen">1103 gen</span>
+                    </button>
+                    <button class="ptile ptile-hot" data-preset="acorn">
+                        <span class="ptile-name">Acorn</span>
+                        <span class="ptile-tag" data-en="5206 gen" data-pl="5206 gen">5206 gen</span>
+                    </button>
+                    <button class="ptile" data-preset="diehard">
+                        <span class="ptile-name">Diehard</span>
+                        <span class="ptile-tag" data-en="dies at 130" data-pl="ginie w 130">dies at 130</span>
+                    </button>
+                    <button class="ptile" data-preset="pi-heptomino">
+                        <span class="ptile-name">Pi-heptomino</span>
+                        <span class="ptile-tag" data-en="173 gen" data-pl="173 gen">173 gen</span>
+                    </button>
+                    <button class="ptile" data-preset="thunderbird">
+                        <span class="ptile-name">Thunderbird</span>
+                        <span class="ptile-tag" data-en="243 gen" data-pl="243 gen">243 gen</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Main sim area ── -->
+        <div class="gol-center">
+
+            <!-- Controls -->
+            <div class="controls-bar">
+                <div class="controls-left">
+                    <button id="btn-start" class="ctl-btn ctl-primary" data-en="▶ Start" data-pl="▶ Start">▶ Start</button>
+                    <button id="btn-stop"  class="ctl-btn ctl-secondary" data-en="⏸ Pause" data-pl="⏸ Pauza">⏸ Pause</button>
+                    <button id="btn-step"  class="ctl-btn ctl-secondary" data-en="⏭ Step"  data-pl="⏭ Krok">⏭ Step</button>
+                    <button id="btn-rand"  class="ctl-btn ctl-secondary" data-en="Random" data-pl="Losowe">Random</button>
+                    <button id="btn-clear" class="ctl-btn ctl-danger"    data-en="✕ Clear"  data-pl="✕ Wyczyść">✕ Clear</button>
+                </div>
+                <div class="controls-right">
+                    <label class="ctl-group">
+                        <span class="ctl-group-label" data-en="Speed" data-pl="Prędkość">Speed</span>
+                        <select id="speed-select" class="gol-select">
+                            <option value="50">50ms</option>
+                            <option value="100">100ms</option>
+                            <option value="250">250ms</option>
+                            <option value="500">500ms</option>
+                            <option value="1000" selected>1s</option>
+                            <option value="2000">2s</option>
+                            <option value="5000">5s</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="canvas-wrapper">
+                <canvas id="game-canvas"></canvas>
+                <div class="canvas-hint" id="canvas-hint"
+                     data-en="Click cells to toggle · Pick a pattern above to begin"
+                     data-pl="Kliknij komórkę · Wybierz wzór powyżej aby zacząć"
+                >Click cells to toggle · Pick a pattern above to begin</div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-item-label" data-en="Generation" data-pl="Pokolenie">Generation</span>
+                    <span class="stat-item-value" id="stat-gen">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-item-label" data-en="Live Cells" data-pl="Żywe komórki">Live Cells</span>
+                    <span class="stat-item-value" id="stat-cells">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-item-label" data-en="Status" data-pl="Status">Status</span>
+                    <span class="stat-item-value" id="stat-status">—</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script is:inline>
+        (function () {
+
+            /* ── i18n ── */
+            const DYN = {
+                running: { en: 'Running', pl: 'Działa' },
+                stopped: { en: 'Stopped', pl: 'Zatrzymano' },
+            };
+            function getLang() { return localStorage.getItem('lang') || 'en'; }
+            function applyLang() {
+                const lang = getLang();
+                document.querySelectorAll('[data-en][data-pl]').forEach(el => { el.textContent = el.dataset[lang]; });
+                document.querySelectorAll('[data-lang-show]').forEach(el => { el.style.display = el.dataset.langShow === lang ? '' : 'none'; });
+                const st = document.getElementById('stat-status');
+                if (st) st.textContent = running ? DYN.running[lang] : DYN.stopped[lang];
+            }
+            window.addEventListener('langchange', applyLang);
+            let _ll = getLang();
+            setInterval(() => { const c = getLang(); if (c !== _ll) { _ll = c; applyLang(); } }, 200);
+
+            const SIZE = 14;
+            const COLS = 60;
+            const ROWS = 38;
+
+            const canvas = document.getElementById('game-canvas');
+            const ctx    = canvas.getContext('2d');
+            const hint   = document.getElementById('canvas-hint');
+
+            function resizeCanvas() {
+                canvas.width  = COLS * SIZE;
+                canvas.height = ROWS * SIZE;
+            }
+            resizeCanvas();
+
+            /* ── State ── */
+            let grid       = makeGrid();
+            let running    = false;
+            let interval   = null;
+            let generation = 0;
+            let epochMs    = 1000;
+
+            const C = { bg: '#080c0a', grid: '#152019', cell: '#22d97a' };
+
+            /* ══ All patterns ══ */
+            function center(ox, oy) { return { ox: Math.floor(COLS/2) + (ox||0), oy: Math.floor(ROWS/2) + (oy||0) }; }
+
+            const PAT = {
+                /* Oscillators */
+                blinker:        { cells: [[0,0],[0,1],[0,2]], ...center(-1,0) },
+                toad:           { cells: [[0,1],[0,2],[0,3],[1,0],[1,1],[1,2]], ...center(-2,-1) },
+                beacon:         { cells: [[0,0],[0,1],[1,0],[2,3],[3,2],[3,3]], ...center(-2,-2) },
+                pulsar:         { cells: [[0,2],[0,3],[0,4],[0,8],[0,9],[0,10],[2,0],[2,5],[2,7],[2,12],[3,0],[3,5],[3,7],[3,12],[4,0],[4,5],[4,7],[4,12],[5,2],[5,3],[5,4],[5,8],[5,9],[5,10],[7,2],[7,3],[7,4],[7,8],[7,9],[7,10],[8,0],[8,5],[8,7],[8,12],[9,0],[9,5],[9,7],[9,12],[10,0],[10,5],[10,7],[10,12],[12,2],[12,3],[12,4],[12,8],[12,9],[12,10]], ...center(-6,-6) },
+                pentadecathlon: { cells: [[0,1],[1,1],[2,0],[2,2],[3,1],[4,1],[5,1],[6,1],[7,0],[7,2],[8,1],[9,1],[10,1],[11,1],[12,1],[13,1],[14,0],[14,2],[15,1],[16,1]], ...center(-1,-8) },
+                clock:          { cells: [[0,1],[1,0],[1,2],[2,1],[2,3],[3,2]], ...center(-2,-2) },
+                'figure8':      { cells: [[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,0],[2,1],[2,2],[3,3],[3,4],[3,5],[4,3],[4,4],[4,5],[5,3],[5,4],[5,5]], ...center(-4,-3) },
+                'queen-bee':    { cells: [[0,1],[1,0],[1,2],[2,0],[2,2],[3,1],[4,1],[5,0],[5,2],[6,0],[6,2],[7,1],[8,1],[9,0],[9,2],[10,0],[10,2],[11,1],[12,1],[13,0],[13,2],[14,1]], ...center(-2,-7) },
+
+                /* Spaceships */
+                glider:         { cells: [[0,1],[1,2],[2,0],[2,1],[2,2]], ox: 4, oy: 4 },
+                lwss:           { cells: [[0,1],[0,2],[0,3],[0,4],[1,0],[1,4],[2,4],[3,0],[3,3]], ...center(-4,-2) },
+                mwss:           { cells: [[0,2],[0,3],[0,4],[0,5],[1,0],[1,1],[1,5],[2,5],[3,0],[3,4],[4,2]], ...center(-4,-2) },
+                hwss:           { cells: [[0,2],[0,3],[0,4],[0,5],[0,6],[1,0],[1,1],[1,6],[2,6],[3,0],[3,5],[4,2],[4,3]], ...center(-4,-2) },
+
+                /* Still lifes */
+                block:          { cells: [[0,0],[0,1],[1,0],[1,1]], ...center(-1,-1) },
+                beehive:        { cells: [[0,1],[0,2],[1,0],[1,3],[2,1],[2,2]], ...center(-2,-1) },
+                loaf:           { cells: [[0,1],[0,2],[1,0],[1,3],[2,1],[2,3],[3,2]], ...center(-2,-2) },
+                boat:           { cells: [[0,0],[0,1],[1,0],[1,2],[2,1]], ...center(-2,-2) },
+                tub:            { cells: [[0,1],[1,0],[1,2],[2,1]], ...center(-2,-2) },
+
+                /* Guns */
+                'glider-gun':   {
+                    cells: [[4,0],[4,1],[5,0],[5,1],[4,10],[5,10],[6,10],[3,11],[7,11],[2,12],[8,12],[2,13],[8,13],[5,14],[3,15],[7,15],[4,16],[5,16],[6,16],[5,17],[2,20],[3,20],[4,20],[2,21],[3,21],[4,21],[1,22],[5,22],[0,24],[1,24],[5,24],[6,24],[2,34],[3,34],[2,35],[3,35]],
+                    ox: 1, oy: 2
+                },
+                'simkin-gun':   {
+                    cells: [[0,0],[0,1],[1,0],[1,1],[0,4],[0,5],[1,4],[1,5],[4,2],[4,3],[5,2],[5,3],[8,0],[8,1],[9,0],[9,1],[34,8],[34,9],[35,7],[35,9],[36,7],[36,8],[37,7],[38,6],[38,8],[39,5],[39,8],[40,5],[40,6],[40,7],[41,5],[26,10],[27,10],[28,10],[26,11],[27,12]],
+                    ox: 2, oy: 2
+                },
+
+                /* Methuselahs */
+                'r-pentomino':  { cells: [[0,1],[0,2],[1,0],[1,1],[2,1]], ...center(-1,-1) },
+                acorn:          { cells: [[0,1],[1,3],[2,0],[2,1],[2,4],[2,5],[2,6]], ...center(-3,-1) },
+                diehard:        { cells: [[0,6],[1,0],[1,1],[2,1],[2,5],[2,6],[2,7]], ...center(-4,-1) },
+                'pi-heptomino': { cells: [[0,0],[0,1],[0,2],[1,0],[1,2],[2,0],[2,2]], ...center(-1,-1) },
+                thunderbird:    { cells: [[0,0],[0,1],[0,2],[2,1],[3,1],[4,1]], ...center(-1,-2) },
+            };
+
+            /* ── Helpers ── */
+            function makeGrid() { return Array.from({ length: ROWS }, () => Array(COLS).fill(0)); }
+            function countLive() {
+                let n = 0;
+                for (const row of grid)
+                    for (const cell of row)
+                        n += cell;
+                return n;
+            }
+
+            /* ── Draw ── */
+            function draw() {
+                ctx.fillStyle = C.bg;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = C.grid; ctx.lineWidth = 0.5;
+                for(let x=0;x<=COLS;x++){ctx.beginPath();ctx.moveTo(x*SIZE,0);ctx.lineTo(x*SIZE,canvas.height);ctx.stroke();}
+                for(let y=0;y<=ROWS;y++){ctx.beginPath();ctx.moveTo(0,y*SIZE);ctx.lineTo(canvas.width,y*SIZE);ctx.stroke();}
+                for(let y=0;y<ROWS;y++) for(let x=0;x<COLS;x++) {
+                    if(!grid[y][x]) continue;
+                    ctx.shadowColor=C.cell; ctx.shadowBlur=0;
+                    ctx.fillStyle=C.cell;
+                    ctx.fillRect(x*SIZE+1,y*SIZE+1,SIZE-2,SIZE-2);
+                    ctx.shadowBlur=0;
+                }
+                canvas.style.cursor = running ? 'default' : 'crosshair';
+                updateStats();
+            }
+
+            /* ── Next gen ── */
+            function next() {
+                const n = makeGrid();
+                for(let y=0;y<ROWS;y++) for(let x=0;x<COLS;x++) {
+                    let c=0;
+                    for(let dy=-1;dy<=1;dy++) for(let dx=-1;dx<=1;dx++){
+                        if(dx===0&&dy===0) continue;
+                        const ny=y+dy,nx=x+dx;
+                        if(ny>=0&&ny<ROWS&&nx>=0&&nx<COLS&&grid[ny][nx]) c++;
+                    }
+                    n[y][x]=grid[y][x]?(c===2||c===3?1:0):(c===3?1:0);
+                }
+                grid=n; generation++; draw();
+            }
+
+            /* ── Stats ── */
+            function updateStats() {
+                const lang = getLang();
+                document.getElementById('stat-gen').textContent    = generation;
+                document.getElementById('stat-cells').textContent  = countLive();
+                document.getElementById('stat-status').textContent = running ? DYN.running[lang] : DYN.stopped[lang];
+            }
+
+            /* ── Controls ── */
+            function startSim() {
+                if (running) return;
+                running = true;
+                hint.style.opacity = '0';
+                clearInterval(interval);
+                interval = setInterval(next, epochMs);
+                updateStats();
+            }
+            function stopSim() { running=false; clearInterval(interval); updateStats(); }
+            function clearSim() {
+                stopSim(); grid=makeGrid(); generation=0;
+                hint.style.opacity='1';
+                document.querySelectorAll('.ptile').forEach(b=>b.classList.remove('active'));
+                draw();
+            }
+            function randomSim() {
+                stopSim(); grid=makeGrid(); generation=0; hint.style.opacity='0';
+                for(let y=0;y<ROWS;y++) for(let x=0;x<COLS;x++) grid[y][x]=Math.random()<0.3?1:0;
+                document.querySelectorAll('.ptile').forEach(b=>b.classList.remove('active'));
+                draw();
+            }
+
+            document.getElementById('btn-start').onclick = startSim;
+            document.getElementById('btn-stop').onclick  = stopSim;
+            document.getElementById('btn-step').onclick  = ()=>{stopSim();next();};
+            document.getElementById('btn-rand').onclick  = randomSim;
+            document.getElementById('btn-clear').onclick = clearSim;
+
+            document.getElementById('speed-select').onchange = function() {
+                epochMs=parseInt(this.value);
+                if(running){clearInterval(interval);interval=setInterval(next,epochMs);}
+                updateStats();
+            };
+
+
+            /* ── Canvas click ── */
+            let isDrawing = false;
+
+            function toggleCell(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+
+                const x = Math.floor((e.clientX - rect.left) * scaleX / SIZE);
+                const y = Math.floor((e.clientY - rect.top) * scaleY / SIZE);
+
+                if (x < 0 || x >= COLS || y < 0 || y >= ROWS) return;
+
+                grid[y][x] = grid[y][x] ? 0 : 1;
+            }
+
+            canvas.addEventListener('mousedown', e => {
+                if (running) return;
+                isDrawing = true;
+                toggleCell(e);
+                hint.style.opacity = '0';
+                draw();
+            });
+
+            canvas.addEventListener('mousemove', e => {
+                if (!isDrawing || running) return;
+                toggleCell(e);
+                draw();
+            });
+
+            canvas.addEventListener('mouseup', () => {
+                isDrawing = false;
+            });
+
+            canvas.addEventListener('mouseleave', () => {
+                isDrawing = false;
+            });
+
+            /* ── Preset tiles ── */
+            document.querySelectorAll('.ptile').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const key = btn.dataset.preset;
+                    const p   = PAT[key];
+                    if(!p) return;
+                    stopSim(); grid=makeGrid(); generation=0; hint.style.opacity='0';
+                    p.cells.forEach(([r,c]) => {
+                        const gy=r+p.oy, gx=c+p.ox;
+                        if(gy>=0&&gy<ROWS&&gx>=0&&gx<COLS) grid[gy][gx]=1;
+                    });
+                    document.querySelectorAll('.ptile').forEach(b=>b.classList.remove('active'));
+                    btn.classList.add('active');
+                    draw();
+                });
+            });
+
+            /* ── Init ── */
+            applyLang();
+            draw();
+
+        })();
+    </script>
+
+    <style>
+        /* tokens from global.css: --bg,--bg2,--bg3,--bg4,--accent,--accent2,--accent3,
+           --glow,--text,--muted,--dim,--border,--border2,--mono,--sans,--r,--r2      */
+
+        .gol-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 5rem;
+        }
+
+        /* ── Header ── */
+        .gol-header { margin-bottom: 2.5rem; }
+
+        .gol-header .eyebrow {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 10px;
+        }
+        .gol-header h1 {
+            font-family: var(--mono);
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 600;
+            line-height: 1;
+            margin: 0 0 1rem;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+        .gol-header h1 .accent { color: var(--accent); }
+        .subtitle-bilingual p {
+            font-size: 15px;
+            color: var(--muted);
+            max-width: 580px;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ── Rules 2×2 ── */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 2.5rem;
+        }
+        .rule-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--r2);
+            padding: 1.1rem 1.2rem;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .rule-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, var(--accent3), transparent);
+        }
+        .rule-card:hover { border-color: var(--border2); background: var(--bg3); }
+
+        .rule-emoji { font-size: 1.4rem; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+        .rule-card-body { flex: 1; }
+        .rule-card-title {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .rule-card-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ── Preset section ── */
+        .presets-section { margin-bottom: 2rem; }
+
+        .presets-section .sec-label {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--accent2);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .presets-section .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .preset-category { margin-bottom: 1rem; }
+        .preset-cat-label {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 1px;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .preset-tiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .ptile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            padding: 7px 12px;
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            cursor: pointer;
+            transition: border-color 0.15s, background 0.15s;
+            text-align: left;
+        }
+        .ptile:hover  { border-color: var(--border2); background: var(--bg3); }
+        .ptile.active {
+            border-color: var(--accent2);
+            background: rgba(34,217,122,0.07);
+            box-shadow: 0 0 0 1px var(--accent3);
+        }
+        .ptile-hot { border-color: rgba(34,217,122,0.2); }
+        .ptile-name {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .ptile-tag {
+            font-size: 10px;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        /* ── Sim area ── */
+        .gol-center { min-width: 0; }
+
+        .controls-bar {
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;
+        }
+        .controls-left  { display: flex; gap: 6px; flex-wrap: wrap; }
+        .controls-right { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+        .ctl-btn {
+            font-family: var(--mono);
+            font-size: 12px;
+            padding: 8px 14px;
+            border: 1px solid var(--border2);
+            border-radius: var(--r);
+            cursor: pointer;
+            transition: all 0.15s;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        .ctl-primary   { background: var(--accent); color: #021a0d; border-color: var(--accent); font-weight: 600; }
+        .ctl-primary:hover { background: #38f08e; }
+        .ctl-secondary { background: var(--bg3); color: var(--muted); }
+        .ctl-secondary:hover { border-color: var(--accent2); color: var(--text); background: var(--bg4); }
+        .ctl-danger    { background: transparent; color: #e55; border-color: rgba(220,80,80,0.2); }
+        .ctl-danger:hover { border-color: #e55; background: rgba(220,80,80,0.07); }
+
+        .ctl-group {
+            display: flex; flex-direction: column; gap: 2px;
+        }
+        .ctl-group-label {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--dim);
+        }
+        .gol-select {
+            font-family: var(--mono); font-size: 11px;
+            background: var(--bg3); border: 1px solid var(--border2);
+            color: var(--text); padding: 5px 8px;
+            border-radius: var(--r); cursor: pointer;
+        }
+        .gol-select:focus { outline: 1px solid var(--accent2); }
+
+        .canvas-wrapper { position: relative; }
+        #game-canvas {
+            display: block; width: 100%; height: auto;
+            border: 1px solid var(--border2);
+            border-radius: var(--r);
+            box-shadow: 0 0 40px rgba(34,217,122,0.04);
+        }
+        .canvas-hint {
+            position: absolute; bottom: 0.75rem; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--mono); font-size: 11px;
+            color: var(--muted);
+            background: rgba(8,12,10,0.9);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 5px 14px;
+            pointer-events: none; white-space: nowrap;
+            transition: opacity 0.5s;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            margin-top: 0.75rem;
+        }
+        .stat-item {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 0.7rem 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .stat-item:hover {
+            border-color: var(--border2);
+            background: var(--bg3);
+        }
+        .stat-item-label {
+            font-family: var(--mono); font-size: 9.5px;
+            color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .stat-item-value {
+            font-family: var(--mono);
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .rules-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .rules-grid { grid-template-columns: 1fr 1fr; }
+            .gol-wrapper { padding: 1.5rem 1rem 3rem; }
+            .controls-right { gap: 6px; }
+        }
+        @media (max-width: 420px) {
+            .rules-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+</Layout>
