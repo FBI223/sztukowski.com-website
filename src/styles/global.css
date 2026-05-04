@@ -409,24 +409,64 @@ footer a:hover {
 /* ═══════════════════════════════════════════
    HOBBY GRID  (used on Hobby)
 ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   HOBBY GRID  (FINAL)
+═══════════════════════════════════════════ */
+
 .hobby-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
+
+/* CARD */
 .hobby-card {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: var(--r2);
   padding: 1.5rem;
-  transition: border-color 0.2s, background 0.2s;
+
   position: relative;
   overflow: hidden;
+
+  transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.2s;
+
+  /* fade in */
+  opacity: 0;
+  transform: translateY(15px);
+  animation: hobbyFade 0.4s ease forwards;
 }
+
+/* stagger animation */
+.hobby-card:nth-child(1) { animation-delay: 0.05s; }
+.hobby-card:nth-child(2) { animation-delay: 0.1s; }
+.hobby-card:nth-child(3) { animation-delay: 0.15s; }
+.hobby-card:nth-child(4) { animation-delay: 0.2s; }
+.hobby-card:nth-child(5) { animation-delay: 0.25s; }
+.hobby-card:nth-child(6) { animation-delay: 0.3s; }
+.hobby-card:nth-child(7) { animation-delay: 0.35s; }
+.hobby-card:nth-child(8) { animation-delay: 0.4s; }
+.hobby-card:nth-child(9) { animation-delay: 0.45s; }
+.hobby-card:nth-child(10){ animation-delay: 0.5s; }
+
+@keyframes hobbyFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hover */
 .hobby-card:hover {
   border-color: var(--border2);
   background: var(--bg3);
+  transform: translateY(-4px);
 }
+
+/* glow line */
 .hobby-card::after {
   content: '';
   position: absolute;
@@ -436,12 +476,46 @@ footer a:hover {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.hobby-card:hover::after { opacity: 1; }
 
-.hobby-card .icon { font-size: 26px; margin-bottom: 12px; display: block; }
-.hobby-card h3   { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-.hobby-card p    { font-size: 15px; color: var(--muted); line-height: 1.65; }
+.hobby-card:hover::after {
+  opacity: 1;
+}
 
+/* ICON (SVG FIX) */
+.hobby-card .icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.hobby-card .icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* hover icon */
+.hobby-card:hover .icon svg {
+  transform: scale(1.15);
+  color: var(--accent2);
+  filter: drop-shadow(0 0 6px var(--glow));
+}
+
+/* TEXT */
+.hobby-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.hobby-card p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
 /* ═══════════════════════════════════════════
    COURSES  (used on Courses)
 ═══════════════════════════════════════════ */
