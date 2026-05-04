@@ -7,80 +7,130 @@ import Layout from '../layouts/Layout.astro';
   <div class="page-header">
     <div class="eyebrow" data-en="// after hours" data-pl="// po godzinach">// po godzinach</div>
     <h1 data-en="Hobby" data-pl="Zainteresowania">Zainteresowania</h1>
-    <p data-en="What keeps me curious." data-pl="Co napędza moją ciekawość">What keeps me curious when the laptop lid is closed.</p>
+    <p data-en="What keeps me curious." data-pl="Co napędza moją ciekawość">
+      What keeps me curious when the laptop lid is closed.
+    </p>
   </div>
 
   <div class="hobby-grid">
-    <!-- NAUKA I UMYSŁ -->
+
+    <!-- PSYCHOLOGY -->
     <div class="hobby-card">
-      <span class="icon">🧠</span>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 2a4 4 0 0 0-4 4v1a3 3 0 0 0 0 6v1a4 4 0 0 0 4 4h2v2h2v-2h2a4 4 0 0 0 4-4v-1a3 3 0 0 0 0-6V6a4 4 0 0 0-4-4z"/></svg>
+      </div>
       <h3 data-en="Psychology" data-pl="Psychologia">Psychology</h3>
-      <p data-en="Fascinated by social psychology, famous experiments, and the inner workings of the human mind." data-pl="Fascynuje mnie psychologia społeczna, słynne eksperymenty i to, jak właściwie działa ludzki umysł.">Fascinated by social psychology, famous experiments, and the inner workings of the human mind.</p>
+      <p data-en="Fascinated by social psychology, famous experiments, and the inner workings of the human mind."
+         data-pl="Fascynuje mnie psychologia społeczna i działanie ludzkiego umysłu.">
+        Fascinated by social psychology, famous experiments, and the inner workings of the human mind.
+      </p>
     </div>
 
+    <!-- ASTRONOMY -->
     <div class="hobby-card">
-      <span class="icon">🌌</span>
-      <h3 data-en="Astronomy" data-pl="Astronomia">Astronomia</h3>
-      <p data-en="Contemplating the mysteries of the cosmos and the fundamental laws that govern our universe." data-pl="Zgłębianie tajemnic kosmosu i praw, które rządzą wszechświatem.">Contemplating the mysteries of the cosmos and the fundamental laws that govern our universe.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/></svg>
+      </div>
+      <h3>Astronomy</h3>
+      <p>Contemplating the mysteries of the cosmos and fundamental laws of the universe.</p>
     </div>
 
+    <!-- BIOLOGY -->
     <div class="hobby-card">
-      <span class="icon">🧬</span>
-      <h3 data-en="Biology" data-pl="Biologia">Biologia</h3>
-      <p data-en="General interest in the complexity of life, from cellular structures to global ecosystems." data-pl="Ogólne zainteresowanie złożonością życia – od struktur komórkowych po całe ekosystemy.">General interest in the complexity of life, from cellular structures to global ecosystems.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c3 3 3 7 0 10s-3 7 0 10m0-20c-3 3-3 7 0 10s3 7 0 10"/></svg>
+      </div>
+      <h3>Biology</h3>
+      <p>Interest in life complexity — from cells to ecosystems.</p>
     </div>
 
     <!-- SPORT -->
     <div class="hobby-card">
-      <span class="icon">🎾</span>
-      <h3 data-en="Sports & Fitness" data-pl="Sport i Fitness">Sports & Fitness</h3>
-      <p data-en="Active tennis player, cyclist, and gym enthusiast. Former football, karate, and table tennis team member." data-pl="Gram w tenisa, jeżdżę na rowerze i chodzę na siłownię. Kiedyś trenowałem piłkę nożną, karate i ping-ponga.">Active tennis player, cyclist, and gym enthusiast. Former football, karate, and table tennis team member.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" fill="none"/>
+          <path d="M2 12a10 10 0 0 0 20 0" stroke="currentColor" fill="none"/>
+        </svg>
+      </div>
+      <h3>Sports & Fitness</h3>
+      <p>Tennis, gym, cycling. Previously football, karate, table tennis.</p>
     </div>
 
-    <!-- NATURA -->
+    <!-- MOUNTAINS -->
     <div class="hobby-card">
-      <span class="icon">🏔️</span>
-      <h3 data-en="Mountains" data-pl="Góry">Góry</h3>
-      <p data-en="Hiking through the Tatras and the Alps. Finding peace and perspective on the highest trails." data-pl="Wędrówki po Tatrach i Alpach. Szukanie spokoju i perspektywy na najwyższych szlakach.">Hiking through the Tatras and the Alps. Finding peace and perspective on the highest trails.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 20l7-12l4 6l3-4l4 10z"/></svg>
+      </div>
+      <h3>Mountains</h3>
+      <p>Hiking in Tatras and Alps. Peace and perspective.</p>
     </div>
 
+    <!-- WILDLIFE -->
     <div class="hobby-card">
-      <span class="icon">🦅</span>
-      <h3 data-en="Wildlife" data-pl="Dzika Przyroda">Dzika Przyroda</h3>
-      <p data-en="Observing birds and wild animals in their natural habitat. Nature photography and mindfulness." data-pl="Obserwacja ptaków i dzikiej zwierzyny w ich naturalnym środowisku. Kontakt z naturą w czystej postaci.">Observing birds and wild animals in their natural habitat. Nature photography and mindfulness.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M2 12c5-4 10-4 20 0c-5 4-10 4-20 0"/></svg>
+      </div>
+      <h3>Wildlife</h3>
+      <p>Birds, animals, nature observation, mindfulness.</p>
     </div>
 
-    <!-- KULINARIA I MIASTO -->
+    <!-- COOKING -->
     <div class="hobby-card">
-      <span class="icon">🍳</span>
-      <h3 data-en="Culinary Arts" data-pl="Kulinaria">Kulinaria</h3>
-      <p data-en="Cooking Thai, traditional Polish, and Italian (the king of simplicity). Huge fan of seafood." data-pl="Gotowanie kuchni tajskiej, polskiej i włoskiej (za jej prostotę). Uwielbiam owoce morza.">Cooking Thai, traditional Polish, and Italian (the king of simplicity). Huge fan of seafood.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="10" cy="10" r="6" stroke="currentColor" fill="none"/>
+          <path d="M14 14l6 6" stroke="currentColor"/>
+        </svg>
+      </div>
+      <h3>Culinary Arts</h3>
+      <p>Thai, Polish, Italian. Big seafood fan.</p>
     </div>
 
+    <!-- CITY -->
     <div class="hobby-card">
-      <span class="icon">☕</span>
-      <h3 data-en="City Life" data-pl="Życie Miejskie">City Life</h3>
-      <p data-en="Exploring Kraków's food scene, hunting for the best coffee/tea, and discovering hidden city spots." data-pl="Odkrywanie krakowskiej gastronomii, szukanie najlepszej kawy i herbaty oraz ciekawych zakamarków miasta.">Exploring Kraków's food scene, hunting for the best coffee/tea, and discovering hidden city spots.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path fill="currentColor" d="M4 8h14v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/>
+          <path d="M18 10h2a2 2 0 0 1 0 4h-2" stroke="currentColor" fill="none"/>
+        </svg>
+      </div>
+      <h3>City Life</h3>
+      <p>Exploring Kraków, coffee, hidden spots.</p>
     </div>
 
-    <!-- ROZRYWKA I TECH -->
+    <!-- GAMING -->
     <div class="hobby-card">
-      <span class="icon">🎮</span>
-      <h3 data-en="Gaming" data-pl="Gry">Gaming</h3>
-      <p data-en="RPG lover with a focus on great storytelling. Playing on PC, Nintendo, and PS4." data-pl="Miłośnik gier RPG z dobrą fabułą. Gram na PC, konsolach Nintendo oraz PS4.">RPG lover with a focus on great storytelling. Playing on PC, Nintendo, and PS4.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 8h10l2 4l-2 4H7l-2-4z"/></svg>
+      </div>
+      <h3>Gaming</h3>
+      <p>RPG, storytelling, PC + consoles.</p>
     </div>
 
+    <!-- MUSIC -->
     <div class="hobby-card">
-      <span class="icon">🎤</span>
-      <h3 data-en="Music & Events" data-pl="Muzyka i Wydarzenia">Muzyka i Wydarzenia</h3>
-      <p data-en="Long-time hip-hop head. Regularly attending concerts (from Giżycko to local Juwenalia)." data-pl="Od lat słucham hip-hopu. Regularnie bywam na koncertach – od Mazur po krakowskie Juwenalia.">Long-time hip-hop head. Regularly attending concerts (from Giżycko to local Juwenalia).</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4"/>
+          <path d="M8 18h8" stroke="currentColor"/>
+        </svg>
+      </div>
+      <h3>Music & Events</h3>
+      <p>Hip-hop, concerts, live events.</p>
     </div>
 
+    <!-- TECH -->
     <div class="hobby-card">
-      <span class="icon">💻</span>
-      <h3 data-en="Tech Curiosity" data-pl="Nowe Technologie">Nowe Technologie</h3>
-      <p data-en="Deep diving into how computers and new gadgets work. Just love seeing the gear behind the code." data-pl="Zgłębianie tego, jak działają komputery i nowe gadżety. Po prostu lubię rozumieć hardware.">Deep diving into how computers and new gadgets work. Just love seeing the gear behind the code.</p>
+      <div class="icon">
+        <svg viewBox="0 0 24 24">
+          <path fill="currentColor" d="M4 4h16v12H4z"/>
+          <path d="M2 20h20" stroke="currentColor"/>
+        </svg>
+      </div>
+      <h3>Tech Curiosity</h3>
+      <p>Understanding hardware and systems behind code.</p>
     </div>
+
   </div>
 
 </Layout>

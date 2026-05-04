@@ -699,6 +699,85 @@ footer a:hover {
 }
 
 
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.contact-grid.hidden {
+  display: none;
+}
+
+/* TILE */
+.contact-tile {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-decoration: none;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.contact-tile:nth-child(1) { animation-delay: 0.05s; }
+.contact-tile:nth-child(2) { animation-delay: 0.1s; }
+.contact-tile:nth-child(3) { animation-delay: 0.15s; }
+.contact-tile:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-tile:hover {
+  border-color: var(--accent);
+  background: var(--bg3);
+  transform: translateY(-3px);
+}
+
+/* ICON SVG */
+.contact-tile .icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* TEXT */
+.contact-tile .label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--accent2);
+}
+
+.contact-tile .value {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* COPY EFFECT */
+.contact-tile.copy {
+  cursor: pointer;
+}
+
+.contact-tile.copied {
+  border-color: var(--accent);
+  background: rgba(34,217,122,0.08);
+}
+
+
 /* ===== HAMBURGER BASE ===== */
 .menu-btn {
   display: none;
