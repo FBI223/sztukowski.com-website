@@ -93,9 +93,24 @@ import Layout from '../layouts/Layout.astro';
         const toggle = document.getElementById('contact-toggle');
         const grid   = document.getElementById('contact-grid');
 
+        function updateButton() {
+            const lang = document.documentElement.getAttribute('data-lang');
+            const hidden = grid.classList.contains('hidden');
+
+            if (hidden) {
+                toggle.textContent = lang === 'pl' ? 'Pokaż kontakt' : 'Show Contact';
+            } else {
+                toggle.textContent = lang === 'pl' ? 'Ukryj kontakt' : 'Hide Contact';
+            }
+        }
+
         toggle.addEventListener('click', () => {
             grid.classList.toggle('hidden');
+            updateButton();
         });
+
+        /* init */
+        updateButton();
 
         /* COPY (EMAIL + PHONE) */
         document.querySelectorAll('.copy').forEach(el => {

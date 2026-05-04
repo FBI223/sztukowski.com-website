@@ -409,9 +409,6 @@ footer a:hover {
 /* ═══════════════════════════════════════════
    HOBBY GRID  (used on Hobby)
 ═══════════════════════════════════════════ */
-/* ═══════════════════════════════════════════
-   HOBBY GRID  (FINAL)
-═══════════════════════════════════════════ */
 
 .hobby-grid {
   display: grid;
@@ -773,9 +770,6 @@ footer a:hover {
 }
 
 
-/* ===== CONTACT  ===== */
-
-
 
 /* ===== CONTACT  ===== */
 
@@ -821,16 +815,29 @@ footer a:hover {
   }
 }
 
-.contact-tile:hover {
-  border-color: var(--accent);
-  background: var(--bg3);
-  transform: translateY(-3px);
-}
 
 /* ICON SVG */
+/* DEFAULT ICON */
 .contact-tile .icon svg {
   width: 22px;
   height: 22px;
+  color: var(--accent);
+  fill: currentColor;
+}
+
+/* LINKEDIN */
+.contact-tile[href*="linkedin"] .icon svg {
+  color: #0A66C2;
+}
+
+/* GITHUB */
+.contact-tile[href*="github"] .icon svg {
+  color: #e6edf3; /* jasny szary (dark mode) */
+}
+
+/* HOVER (ładny efekt) */
+.contact-tile:hover .icon svg {
+  filter: drop-shadow(0 0 6px var(--glow));
 }
 
 /* TEXT */
