@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
       margin-bottom: 3rem;
     }
     .hero-eyebrow {
-      font-family: var(--mono); font-size: 11px; color: var(--accent2);
+      font-family: var(--mono); font-size: 17px; color: var(--accent2);
       letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
     }
     .hero h1 {
@@ -52,7 +52,7 @@ import Layout from '../layouts/Layout.astro';
 
 
   <div class="hero">
-    <div class="hero-eyebrow">// software engineer & researcher</div>
+    <div class="hero-eyebrow">// software · network · ML engineer </div>
     <h1>Marcin<br><span>Sztukowski</span></h1>
     <p class="hero-desc">
       <span data-en="MSc Computer Science student at" data-pl="Student studiów magisterskich informatyki na">MSc Computer Science student at</span>
@@ -79,68 +79,85 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="hero-actions">
-      <a href="/experience" class="btn btn-primary"   data-en="Work & Education →" data-pl="Praca i Edukacja →">Work & Research →</a>
-      <a href="/projects"   class="btn btn-secondary" data-en="Key Projects"     data-pl="Kluczowe Projekty">Key Projects</a>
-      <a href="/cv"         class="btn btn-secondary" data-en="CV PDF"           data-pl="CV PDF">CV PDF</a>
-      <a href="/contact" class="btn btn-secondary"  data-en="Contact"  data-pl="Kontakt"> Contact</a>
+      <a href="/experience/" class="btn btn-primary"   data-en="Work & Education →" data-pl="Praca i Edukacja →">Work & Research →</a>
+      <a href="/projects/"   class="btn btn-secondary" data-en="Key Projects"     data-pl="Kluczowe Projekty">Key Projects</a>
+      <a href="/cv/"         class="btn btn-secondary" data-en="CV PDF"           data-pl="CV PDF">CV PDF</a>
+      <a href="/contact/" class="btn btn-secondary"  data-en="Contact"  data-pl="Kontakt"> Contact</a>
     </div>
   </div>
 
 
 
-  <div class="grid-label" data-en="Directory" data-pl="Katalog">Directory</div>
-  <div class="nav-grid">
-    <a href="/about" class="nav-card">
-      <div class="nc-icon">👤</div>
-      <div class="nc-title" data-en="About"    data-pl="O mnie">About</div>
-      <div class="nc-desc"  data-en="Personal philosophy, academic path, and professional motivations." data-pl="Filozofia pracy, ścieżka akademicka i motywacje zawodowe.">Personal philosophy, academic path, and professional motivations.</div>
-      <div class="nc-arrow" data-en="Read more →"   data-pl="Czytaj więcej →">Read more →</div>
-    </a>
-
-    <a href="/experience" class="nav-card">
-      <div class="nc-icon">💼</div>
-      <div class="nc-title" data-en="Experience"   data-pl="Doświadczenie">Experience</div>
-      <div class="nc-desc"  data-en="Research at GMUM, software roles, and professional trajectory." data-pl="Badania w GMUM, role programistyczne i ścieżka zawodowa.">Research at GMUM, software roles, and professional trajectory.</div>
-      <div class="nc-arrow" data-en="View career →"   data-pl="Zobacz karierę →">View career →</div>
-    </a>
-
-    <a href="/skills" class="nav-card">
-      <div class="nc-icon">⚙️</div>
-      <div class="nc-title" data-en="Skills"   data-pl="Umiejętności">Skills</div>
-      <div class="nc-desc"  data-en="Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography." data-pl="Stack techniczny: Modele Generatywne, Graph ML, optymalizacja systemowa i kryptografia.">Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography.</div>
-      <div class="nc-arrow" data-en="Full stack →"   data-pl="Pełny stack →">Full stack →</div>
-    </a>
-
-    <a href="/projects" class="nav-card">
-      <div class="nc-icon">🔬</div>
-      <div class="nc-title" data-en="Projects" data-pl="Projekty">Projects</div>
-      <div class="nc-desc"  data-en="ADMET drug prediction, ECG systems, and high-performance DNA pipelines." data-pl="Predykcja ADMET, systemy EKG i wydajne pipeline'y DNA.">ADMET drug prediction, ECG systems, and high-performance DNA pipelines.</div>
-      <div class="nc-arrow" data-en="See works →"   data-pl="Zobacz prace →">See works →</div>
-    </a>
-
-    <a href="/courses" class="nav-card">
-      <div class="nc-icon">📚</div>
-      <div class="nc-title" data-en="Courses"  data-pl="Kursy">Courses</div>
-      <div class="nc-desc"  data-en="Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math." data-pl="Program studiów: Teoria informatyki, systemy złożone i matematyka wyższa.">Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math.</div>
-      <div class="nc-arrow" data-en="Explore →"   data-pl="Eksploruj →">Explore →</div>
-    </a>
-
-    <a href="/certs" class="nav-card">
-      <div class="nc-icon">🏅</div>
-      <div class="nc-title" data-en="Certs" data-pl="Certyfikaty">Certs</div>
-      <div class="nc-desc"
-           data-en="Industry certifications: CCNA and more."
-           data-pl="Certyfikaty branżowe: CCNA i inne.">
-        Industry certifications: CCNA and more.
-      </div>
-      <div class="nc-arrow" data-en="View →" data-pl="Zobacz →">View →</div>
-    </a>
-
-    <a href="/cv" class="nav-card">
-      <div class="nc-icon">📄</div>
-      <div class="nc-title" data-en="CV"       data-pl="CV">CV</div>
-      <div class="nc-desc"  data-en="Download the latest version of my professional resume (PDF)." data-pl="Pobierz aktualną wersję mojego życiorysu zawodowego (PDF).">Download the latest version of my professional resume (PDF).</div>
-      <div class="nc-arrow" data-en="Download →"   data-pl="Pobierz →">Download →</div>
-    </a>
+  <div class="dir-group">
+    <div class="dir-group-label" data-en="// Portfolio" data-pl="// Portfolio">// Portfolio</div>
+    <div class="dir-list">
+      <a href="/experience/" class="dir-item">
+        <span class="dir-name" data-en="Experience" data-pl="Doświadczenie">Experience</span>
+        <span class="dir-desc" data-en="Research at GMUM, software roles, and professional trajectory." data-pl="Badania w GMUM, role programistyczne i ścieżka zawodowa.">Research at GMUM, software roles, and professional trajectory.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/projects/" class="dir-item">
+        <span class="dir-name" data-en="Projects" data-pl="Projekty">Projects</span>
+        <span class="dir-desc" data-en="ADMET drug prediction, ECG systems, and high-performance DNA pipelines." data-pl="Predykcja ADMET, systemy EKG i wydajne pipeline'y DNA.">ADMET drug prediction, ECG systems, and high-performance DNA pipelines.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/skills/" class="dir-item">
+        <span class="dir-name" data-en="Skills" data-pl="Umiejętności">Skills</span>
+        <span class="dir-desc" data-en="Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography." data-pl="Stack techniczny: Modele Generatywne, Graph ML, optymalizacja systemowa i kryptografia.">Technical stack: Generative Models, Graph ML, System Optimization, and Cryptography.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+    </div>
   </div>
+
+  <div class="dir-group">
+    <div class="dir-group-label" data-en="// Academic" data-pl="// Akademickie">// Academic</div>
+    <div class="dir-list">
+      <a href="/courses/" class="dir-item">
+        <span class="dir-name" data-en="Courses" data-pl="Kursy">Courses</span>
+        <span class="dir-desc" data-en="Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math." data-pl="Program studiów: Teoria informatyki, systemy złożone i matematyka wyższa.">Academic curriculum: Theoretical CS, Complex Systems, and Advanced Math.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/certs/" class="dir-item">
+        <span class="dir-name" data-en="Certs" data-pl="Certyfikaty">Certs</span>
+        <span class="dir-desc" data-en="Industry certifications: CCNA and more." data-pl="Certyfikaty branżowe: CCNA i inne.">Industry certifications: CCNA and more.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/cv/" class="dir-item">
+        <span class="dir-name" data-en="CV" data-pl="CV">CV</span>
+        <span class="dir-desc" data-en="Download the latest version of my professional resume (PDF)." data-pl="Pobierz aktualną wersję mojego życiorysu zawodowego (PDF).">Download the latest version of my professional resume (PDF).</span>
+        <span class="dir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="dir-group">
+    <div class="dir-group-label" data-en="// Other" data-pl="// Inne">// Other</div>
+    <div class="dir-list">
+      <a href="/about/" class="dir-item">
+        <span class="dir-name" data-en="About" data-pl="O mnie">About</span>
+        <span class="dir-desc" data-en="Personal philosophy, academic path, and professional motivations." data-pl="Filozofia pracy, ścieżka akademicka i motywacje zawodowe.">Personal philosophy, academic path, and professional motivations.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/hobby/" class="dir-item">
+        <span class="dir-name" data-en="Hobby" data-pl="Hobby">Hobby</span>
+        <span class="dir-desc" data-en="Interests and activities outside of work and research." data-pl="Zainteresowania i aktywności poza pracą i badaniami.">Interests and activities outside of work and research.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/game/" class="dir-item">
+        <span class="dir-name" data-en="Game" data-pl="Gra">Game</span>
+        <span class="dir-desc" data-en="An interactive game built into the portfolio." data-pl="Interaktywna gra wbudowana w portfolio.">An interactive game built into the portfolio.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+      <a href="/contact/" class="dir-item">
+        <span class="dir-name" data-en="Contact" data-pl="Kontakt">Contact</span>
+        <span class="dir-desc" data-en="Get in touch via email, LinkedIn or GitHub." data-pl="Skontaktuj się przez email, LinkedIn lub GitHub.">Get in touch via email, LinkedIn or GitHub.</span>
+        <span class="dir-arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
 </Layout>

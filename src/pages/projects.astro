@@ -41,6 +41,84 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
+
+
+
+<div class="proj-section-header">
+  <span class="lbl" data-en="Hackathon" data-pl="Hackathon">Hackathon</span>
+  <span class="sub">EnsembleAI 2026 · Jagiellonian University</span>
+  <div class="line"></div>
+</div>
+
+<div style="border: 1px solid var(--accent); border-radius: var(--r2); padding: 1.25rem; margin-bottom: 1rem;">
+
+  <div style="font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">EnsembleAI Hackathon 2026</div>
+  <div style="font-size: 12px; color: var(--muted); margin-bottom: 1.25rem;"
+       data-en="Multi-track ML competition · Jagiellonian University · 4 independent tasks"
+       data-pl="Wielościeżkowy konkurs ML · Uniwersytet Jagielloński · 4 niezależne zadania">
+    Multi-track ML competition · Jagiellonian University · 4 independent tasks
+  </div>
+
+  <div class="project-card">
+    <div class="ph">
+      <h3 data-en="Task 1 — ChEBI Ontology Prediction" data-pl="Zadanie 1 — Predykcja Ontologii ChEBI">Task 1 — ChEBI Ontology Prediction</h3>
+      <span class="proj-tag" data-type="research" data-en="drug design" data-pl="projektowanie leków">drug design</span>
+    </div>
+    <p data-en="Hierarchical multi-label classification of small molecules into 500 ChEBI ontology classes. Used molecular fingerprints (ECFP, MACCS), GNNs and SMILES transformers. Classes form a DAG — child predictions must be consistent with parents. Metric: macro-averaged F1."
+       data-pl="Hierarchiczna klasyfikacja wieloetykietowa cząsteczek do 500 klas ontologii ChEBI. Użyto odcisków molekularnych (ECFP, MACCS), GNN i transformerów SMILES. Klasy tworzą DAG — predykcje dzieci muszą być spójne z rodzicami. Metryka: makro F1.">
+      Hierarchical multi-label classification of small molecules into 500 ChEBI ontology classes. Used molecular fingerprints (ECFP, MACCS), GNNs and SMILES transformers. Classes form a DAG — child predictions must be consistent with parents. Metric: macro-averaged F1.
+    </p>
+    <div class="badge-row">
+      <span class="badge">GNN</span><span class="badge">RDKit</span><span class="badge">scikit-fingerprints</span><span class="badge">PyTorch Geometric</span><span class="badge">ChEBI</span><span class="badge">macro F1</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="ph">
+      <h3 data-en="Task 2 — Context Retrieval for AI Coding (JetBrains)" data-pl="Zadanie 2 — Retrieval Kontekstu dla AI Coding (JetBrains)">Task 2 — Context Retrieval for AI Coding (JetBrains)</h3>
+      <span class="proj-tag" data-type="research" data-en="LLM / RAG" data-pl="LLM / RAG">LLM / RAG</span>
+    </div>
+    <p data-en="Built a precision Context Collection Pipeline for Python codebases in collaboration with JetBrains Research. The pipeline retrieves the most relevant code snippets for a given developer query, used as context for LLM code completion. Evaluated via ChrF score across three models: Mellum, Codestral and Qwen2.5-Coder."
+       data-pl="Pipeline do precyzyjnego zbierania kontekstu dla baz kodu Python we współpracy z JetBrains Research. System wyszukuje najtrafniejsze fragmenty kodu dla zapytania dewelopera, używane jako kontekst dla uzupełnień LLM. Oceniany przez ChrF na trzech modelach: Mellum, Codestral i Qwen2.5-Coder.">
+      Built a precision Context Collection Pipeline for Python codebases in collaboration with JetBrains Research. The pipeline retrieves the most relevant code snippets for a given developer query, used as context for LLM code completion. Evaluated via ChrF score across three models: Mellum, Codestral and Qwen2.5-Coder.
+    </p>
+    <div class="badge-row">
+      <span class="badge">RAG</span><span class="badge">LLM</span><span class="badge">JetBrains</span><span class="badge">FIM</span><span class="badge">ChrF</span><span class="badge">Python</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="ph">
+      <h3 data-en="Task 3 — Heat Pump Grid Load Forecasting (Euros Energy)" data-pl="Zadanie 3 — Prognozowanie Obciążenia Sieci Pomp Ciepła (Euros Energy)">Task 3 — Heat Pump Grid Load Forecasting (Euros Energy)</h3>
+      <span class="proj-tag" data-type="research" data-en="time-series" data-pl="szeregi czasowe">time-series</span>
+    </div>
+    <p data-en="Time-series extrapolation of electrical grid load for a network of heat pumps across Poland. Trained on 7 months of 5-minute telemetry (13 temperature sensors + geolocation metadata) to forecast per-device monthly load for May–October 2025. Extrapolation task: model must generalize to a new year. Metric: MAE."
+       data-pl="Ekstrapolacja szeregów czasowych obciążenia sieci elektrycznej dla sieci pomp ciepła w Polsce. Trening na 7 miesiącach telemetrii 5-minutowej (13 czujników temperatury + metadane geolokalizacyjne) do prognozowania miesięcznego obciążenia per urządzenie na maj–październik 2025. Metryka: MAE.">
+      Time-series extrapolation of electrical grid load for a network of heat pumps across Poland. Trained on 7 months of 5-minute telemetry (13 temperature sensors + geolocation metadata) to forecast per-device monthly load for May–October 2025. Extrapolation task: model must generalize to a new year. Metric: MAE.
+    </p>
+    <div class="badge-row">
+      <span class="badge">time-series</span><span class="badge">XGBoost</span><span class="badge">feature engineering</span><span class="badge">MAE</span><span class="badge">Euros Energy</span>
+    </div>
+  </div>
+
+  <div class="project-card" style="margin-bottom: 0;">
+    <div class="ph">
+      <h3 data-en="Task 4 — ECG Paper Digitization" data-pl="Zadanie 4 — Digitalizacja EKG z Papieru">Task 4 — ECG Paper Digitization</h3>
+      <span class="proj-tag" data-type="flagship" data-en="medical" data-pl="medyczne">medical CV</span>
+    </div>
+    <p data-en="Computer vision pipeline converting scanned or photographed paper ECG printouts back into 1D digital time-series signals at 500 Hz. Handles real-world degradation: crumpled paper, handwritten annotations, B&W photocopies and poor lighting. Scored across three axes: signal morphology (Pearson correlation), amplitude calibration (SNR) and temporal alignment (cross-correlation)."
+       data-pl="Pipeline Computer Vision konwertujący zeskanowane lub sfotografowane wydruki EKG z powrotem do cyfrowych sygnałów 1D (500 Hz). Obsługuje realne degradacje: pognieciony papier, notatki odręczne, kopie B&W i słabe oświetlenie. Ocena w trzech wymiarach: morfologia sygnału (korelacja Pearsona), kalibracja amplitudy (SNR) i wyrównanie czasowe (cross-correlation).">
+      Computer vision pipeline converting scanned or photographed paper ECG printouts back into 1D digital time-series signals at 500 Hz. Handles real-world degradation: crumpled paper, handwritten annotations, B&W photocopies and poor lighting. Scored across three axes: signal morphology (Pearson correlation), amplitude calibration (SNR) and temporal alignment (cross-correlation).
+    </p>
+    <div class="badge-row">
+      <span class="badge">Computer Vision</span><span class="badge">OpenCV</span><span class="badge">signal processing</span><span class="badge">NumPy</span><span class="badge">ECG</span><span class="badge">500 Hz</span>
+    </div>
+  </div>
+
+</div>
+
+
+
 <div class="proj-section-header">
   <span class="lbl" data-en="Drug Design ML" data-pl="ML w Proj. Leków">Drug Design ML</span>
   <div class="line"></div>
@@ -49,7 +127,7 @@ import Layout from '../layouts/Layout.astro';
 <div class="project-card">
   <div class="ph">
     <h3 data-en="ADMET Multi-Task Learning" data-pl="Wielozadaniowe Uczenie ADMET">ADMET Multi-Task Learning</h3>
-    <span class="proj-tag" data-type="active" data-en="active" data-pl="aktywny">active</span>
+    <span class="proj-tag" data-type="done" data-en="done" data-pl="skonczony">done</span>
   </div>
   <p data-en="Predicting full ADMET drug profiles (Absorption, Distribution, Metabolism, Excretion, Toxicity) using a multi-task learning architecture. Shared representations across pharmacokinetic endpoints improve data efficiency and generalization." data-pl="Predykcja pełnych profili ADMET leków (Absorpcja, Dystrybucja, Metabolizm, Wydalanie, Toksyczność) przy użyciu architektury wielozadaniowej. Wspólne reprezentacje poprawiają efektywność i generalizację.">Predicting full ADMET drug profiles (Absorption, Distribution, Metabolism, Excretion, Toxicity) using a multi-task learning architecture. Shared representations across pharmacokinetic endpoints improve data efficiency and generalization.</p>
   <div class="badge-row">
@@ -119,6 +197,14 @@ import Layout from '../layouts/Layout.astro';
   <div class="ph"><h3 data-en="FoxyGodot — 2D Platformer Game" data-pl="FoxyGodot — Gra Platformowa 2D">FoxyGodot — 2D Platformer Game</h3></div>
   <p data-en="2D platformer in Godot (C#) designed as an exercise in classical OOP design patterns. Implements Strategy, State, Factory, Observer / Event Bus, Singleton and Template Method." data-pl="Platformówka 2D w Godot (C#) jako ćwiczenie ze wzorców projektowych OOP. Implementuje Strategy, State, Factory, Observer / Event Bus, Singleton i Template Method.">2D platformer in Godot (C#) designed as an exercise in classical OOP design patterns. Implements Strategy, State, Factory, Observer / Event Bus, Singleton and Template Method.</p>
   <div class="badge-row"><span class="badge">C#</span><span class="badge">Godot</span><span class="badge">OOP</span><span class="badge">design patterns</span></div>
+</div>
+
+<div class="project-card">
+  <div class="ph"><h3 data-en="FlappyBirdGodot — 2D Flappy Bird Clone" data-pl="FlappyBirdGodot — Klon Flappy Bird 2D">FlappyBirdGodot — 2D Flappy Bird Clone</h3></div>
+  <p data-en="Flappy Bird clone built in Godot with C#. Features scene management, signal-based event system (SignalManager, GameManager), score tracking and animated transitions. Architecture uses partial classes and Godot's node lifecycle (_Ready, _Process, _ExitTree)." data-pl="Klon Flappy Bird w Godot z C#. Zawiera zarządzanie scenami, system zdarzeń oparty na sygnałach (SignalManager, GameManager), śledzenie wyników i animowane przejścia. Architektura używa klas częściowych i cyklu życia węzłów Godot.">Flappy Bird clone built in Godot with C#. Features scene management, signal-based event system (SignalManager, GameManager), score tracking and animated transitions. Architecture uses partial classes and Godot's node lifecycle (_Ready, _Process, _ExitTree).</p>
+  <div class="badge-row">
+    <span class="badge">C#</span><span class="badge">Godot</span><span class="badge">OOP</span><span class="badge">signals</span><span class="badge">scene management</span>
+  </div>
 </div>
 
 <div class="project-card">
