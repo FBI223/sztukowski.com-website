@@ -991,3 +991,15 @@ a.contact-tile[href*="github"] .icon svg {
   }
 }
 
+
+/* ═══════════════════════════════════════════
+   NAV: hidden items (code kept, visually off)
+═══════════════════════════════════════════ */
+.topbar-nav a[href="/game/"],
+.topbar-nav a[href="/hobby/"],
+.topbar-nav a[href="/certs/"],
+.topbar-nav a[href="/courses/"] {
+  display: none;
+}
+
+
